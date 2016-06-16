@@ -1,0 +1,13 @@
+Django==1.9.4
+django-bootstrap3==7.0.0
+docutils==0.12
+pillow==3.2.0
+
+###############################################################################
+# OTHER REQUIREMENTS (NON-PYTHON RELATED)
+###############################################################################
+# gettext (0.15 or higher): 
+# 	Used for creating and compiling translation files
+#	Mac: 	
+#		get with $brew install gettext, 
+#	     	create link $brew link gettext --force 	

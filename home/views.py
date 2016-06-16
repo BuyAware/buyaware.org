@@ -5,12 +5,12 @@ from django.core.urlresolvers import reverse
 
 def home(request):
 
-    return redirect(reverse('home:home_en'))
+    return render(request, 'home/home.html')
 
-def home_en(request):
+# def home_en(request):
 
-    return render(request, 'home/home_en.html')
+#     return render(request, 'home/home_en.html')
 
-def home_de(request):
+# def home_de(request):
 
-   return render(request, 'home/home_de.html')
+#    return render(request, 'home/home_de.html')

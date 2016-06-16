@@ -5,6 +5,10 @@
 import os
 import socket
 
+# For localization 
+from django.utils.translation import ugettext_lazy as _
+
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -117,6 +121,7 @@ TEMPLATES = [
     },
 ]
 
+
 ROOT_URLCONF = 'buyaware.urls'
 
 WSGI_APPLICATION = 'buyaware.wsgi.application'
@@ -127,3 +132,12 @@ FORCE_SCRIPT_NAME = ''
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+#Languages in which the web page is translated
+LANGUAGES = (
+    ('en', _('English')),
+    ('de', _('Deutsch')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

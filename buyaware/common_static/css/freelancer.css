@@ -498,5 +498,8 @@ footer .footer-below {
         z-index: 3;   
     }
 
-
+/* Align the language selector with the other buttons */
+.language_selector {
+    padding: 15px;
+}
 
