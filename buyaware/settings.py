@@ -75,7 +75,8 @@ STATICFILES_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'home.apps.HomeConfig',   
+    'home.apps.HomeConfig',
+    'blog',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
@@ -141,3 +142,10 @@ LANGUAGES = (
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+
+# <----- BLOG SETTINGS -----> #
+
+POSTS_PER_PAGE = 5
+
+
