@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block content %}
+
+<header>
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+		  <div class ="pagetitle">
+                    <h1>{{ post.title }}</h1>
+		    </div>
+                </div>
+          </div>
+</header>
+
+<section id="post">
+  <p>{{ post.body }}<p>
+<section>
+  
+{% endblock %}

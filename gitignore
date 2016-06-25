@@ -10,5 +10,8 @@ mydatabase
 # ignore .pyc files because they are binaries.
 *.pyc
 
-# ignore deployement settings containing confedential information
+# ignore deployement settings containing confidential information
 ./buyaware/settings_deployment*
+
+# ignore backup files
+*~
