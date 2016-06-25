@@ -19,7 +19,7 @@ class PostModel(models.Model):
 
     # scheduled date for publication, after this date, if is_validated is set
     # to true, the post will appear on the page.
-    pub_date = models.DateField(auto_now_add = True)
+    pub_date = models.DateField()
 
     # A post can be put up for moderation before being published
     is_validated = models.BooleanField()

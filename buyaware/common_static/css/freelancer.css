@@ -86,13 +86,13 @@ header {
 }
 
 header .container {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
 header img {
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 0px;
 }
 
 header .intro-text .name {
@@ -111,7 +111,11 @@ header .intro-text .skills {
 @media(min-width:768px) {
     header .container {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
+    }
+
+    header .container .pagetitle {
+	padding-top: 75px;
     }
 
     header .intro-text .name {
@@ -502,4 +506,3 @@ footer .footer-below {
 .language_selector {
     padding: 15px;
 }
-

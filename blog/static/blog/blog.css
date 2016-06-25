@@ -1,0 +1,11 @@
+p.date {
+    color: gray;
+    font-style: italic;   
+}
+
+.latest-posts {
+    background-color: #f5f3f3;
+    padding-top: 20;
+    padding-bottom: 20;
+    border-radius: 15px;
+}
