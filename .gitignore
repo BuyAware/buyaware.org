@@ -12,3 +12,6 @@ mydatabase
 
 # ignore deployement settings containing confedential information
 ./buyaware/settings_deployment*
+
+# ignore backup files
+*~
