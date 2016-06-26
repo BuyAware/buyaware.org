@@ -1,9 +1,17 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import PostModel
+from .models import PostModel, Image
+
+class ImageAdmin(admin.ModelAdmin):
+    model = Image
+    exclude = ('post',)
+
+class ImageInline(admin.TabularInline):
+    model = Image.post.through
 
 class PostAdmin(admin.ModelAdmin):
     model = PostModel
+    inlines = [ImageInline,]
 
     # Limit author query-set to staff members
     def get_form(self, request, obj=None, **kwargs):
@@ -13,4 +21,6 @@ class PostAdmin(admin.ModelAdmin):
         return form
     
 # register models
+admin.site.register(Image, ImageAdmin)
 admin.site.register(PostModel, PostAdmin)
+

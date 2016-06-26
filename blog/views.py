@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.conf import settings
-from .models import PostModel
+from .models import PostModel, Image
 from django.shortcuts import get_object_or_404
 
 
@@ -19,6 +19,9 @@ def post_detail(request, slug):
     post detail view.
     '''
     
+    images = PostModel.objects.get(slug = slug).image_set.all()
+
     return render(request, 'blog/post_detail.html', {
-        'post': get_object_or_404(PostModel, slug = slug)
+        'post': get_object_or_404(PostModel, slug = slug),
+        'images': images,
     })

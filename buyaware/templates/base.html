@@ -58,35 +58,32 @@
 		<li class="page-scroll">
 		  <a href="{% url 'blog:blog_index' %}">{% trans "Blog" %}</a>
 		</li>
-		<li class="page-scroll">
-		  <a href="#contact">{% trans "Contact" %}</a>
-		</li>
-		    <li>
-		      <div class="language_selector">
-			<form action="{% url 'set_language' %}" method="post">
-			  {% csrf_token %}
-			  <input name="next" type="hidden" value="/" />
-			  <select name="language">
-			  
-			  {% get_available_languages as LANGUAGES %}
-			  {% get_language_info_list for LANGUAGES as languages %}
-			  {% for language in languages %}
-			  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-			    {{ language.code|upper}}
+		<li>
+		  <div class="language_selector">
+		    <form action="{% url 'set_language' %}" method="post">
+		      {% csrf_token %}
+		      <input name="next" type="hidden" value="/" />
+		      <select name="language">
+			
+			{% get_available_languages as LANGUAGES %}
+			{% get_language_info_list for LANGUAGES as languages %}
+			{% for language in languages %}
+			<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+			  {{ language.code|upper}}
 			  </option>
-			  {% endfor %}
-			  </select>
-			  <input type="submit" value="Go" />
-			</form>
-		      <div>
-		    </li>
+			{% endfor %}
+		      </select>
+		      <input type="submit" value="Go" />
+		    </form>
+		    <div>
+		</li>
               </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+              </div>
+              <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
     </nav>
-
+    
 {% block content %}
     
 {% endblock %}
