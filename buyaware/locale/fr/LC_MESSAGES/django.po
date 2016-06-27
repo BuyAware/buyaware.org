@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-27 20:26+0000\n"
+"PO-Revision-Date: 2016-06-27 22:27+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: buyaware/settings.py:142
+msgid "English"
+msgstr "Anglais"
+
+#: buyaware/settings.py:143
+msgid "Deutsch"
+msgstr "Allemand"
+
+#: buyaware/settings.py:144
+msgid "Francais"
+msgstr "Francais"
+
+#: buyaware/templates/base.html:59
+msgid "Blog"
+msgstr "Blog"
+
+#: buyaware/templates/base.html:98
+msgid "Location"
+msgstr "Origine"
+
+#: buyaware/templates/base.html:99
+msgid "Switzerland"
+msgstr "Suisse"
+
+#: buyaware/templates/base.html:102
+msgid "Around the Web"
+msgstr "Viens nous visiter sur"

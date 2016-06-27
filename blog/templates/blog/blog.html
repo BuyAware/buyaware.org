@@ -19,7 +19,7 @@
 	    {{ post.pub_date|date:"D d.m.Y" }}
 	  </p>
 	  <p>
-	    {{ post.body|linebreaks|truncatechars:100 }}
+	    {{ post.body|truncatechars:100 }}
 	  </p>
 	  <p>
 	    <a href="{{ post.get_absolute_url }}">read on...</a>

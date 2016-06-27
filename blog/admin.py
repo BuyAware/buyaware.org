@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from .models import PostModel, Image
+from django import forms
+from tinymce.widgets import TinyMCE
+
 
 class ImageAdmin(admin.ModelAdmin):
     model = Image
@@ -9,9 +12,17 @@ class ImageAdmin(admin.ModelAdmin):
 class ImageInline(admin.TabularInline):
     model = Image.post.through
 
+class PostAdminForm(forms.ModelForm):
+    body = forms.CharField(widget=TinyMCE(attrs={'cols': 85, 'rows': 20}))
+
+    class Meta:
+        model = PostModel
+        fields = '__all__'
+
 class PostAdmin(admin.ModelAdmin):
     model = PostModel
     inlines = [ImageInline,]
+    form = PostAdminForm
 
     # Limit author query-set to staff members
     def get_form(self, request, obj=None, **kwargs):

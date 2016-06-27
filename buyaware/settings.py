@@ -85,6 +85,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    ### IMPORTED PROJECTS ###
+    'modeltranslation',   # translate model data in registered languages
+    'tinymce',   # WYSIWIG richtext editor
+    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -137,6 +142,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 LANGUAGES = (
     ('en', _('English')),
     ('de', _('Deutsch')),
+    ('fr', _('Francais')),
 )
 
 LOCALE_PATHS = (
@@ -144,8 +150,17 @@ LOCALE_PATHS = (
 )
 
 
-# <----- BLOG SETTINGS -----> #
+# <----- BLOG SETTINGS -----> 
 
 POSTS_PER_PAGE = 5
 
 
+# <----- TINYMCE SETTINGS -----> 
+
+TINYMCE_JS_URL = STATIC_URL + 'js/tinymce/tinymce.min.js'
+TINYMCE_JS_ROOT = STATIC_ROOT + 'js/tinymce'
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace",
+    'theme': "modern",
+}
+TINYMCE_SPELLCHECKER = True
