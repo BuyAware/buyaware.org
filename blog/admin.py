@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from .models import PostModel, Image
 from django import forms
+from . import translation
+from modeltranslation.admin import TranslationAdmin
 from tinymce.widgets import TinyMCE
 
 
