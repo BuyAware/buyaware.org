@@ -27,7 +27,7 @@ class PostModel(models.Model):
     # The author is selected from a list of staff members.
     author = models.ForeignKey(User)
     
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
@@ -47,5 +47,5 @@ class Image(models.Model):
     # image field
     image = models.ImageField();
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name

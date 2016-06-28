@@ -89,7 +89,9 @@ INSTALLED_APPS = (
     ### IMPORTED PROJECTS ###
     'modeltranslation',   # translate model data in registered languages
     'tinymce',   # WYSIWIG richtext editor
-    
+    'photologue',   # Picture management tool and toolbox
+    'sortedm2m',   # custom many2many relationship which remembers order
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -160,7 +162,9 @@ POSTS_PER_PAGE = 5
 TINYMCE_JS_URL = STATIC_URL + 'js/tinymce/tinymce.min.js'
 TINYMCE_JS_ROOT = STATIC_ROOT + 'js/tinymce'
 TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "table,spellchecker,paste,searchreplace",
+    #'toolbar': ,
+    'plugins': "table,spellchecker,paste,searchreplace, image imagetools",
     'theme': "modern",
+    'imagetools_cors_hosts': ['buyaware.org'],
 }
 TINYMCE_SPELLCHECKER = True

@@ -1,16 +1,15 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import PostModel, Image
+
+# Import extra models
+from .models import PostModel
+from photologue.models import Gallery
+
+# Import form customisation classes
 from django import forms
 from tinymce.widgets import TinyMCE
 
 
-class ImageAdmin(admin.ModelAdmin):
-    model = Image
-    exclude = ('post',)
-
-class ImageInline(admin.TabularInline):
-    model = Image.post.through
 
 class PostAdminForm(forms.ModelForm):
     body = forms.CharField(widget=TinyMCE(attrs={'cols': 85, 'rows': 20}))
@@ -21,7 +20,6 @@ class PostAdminForm(forms.ModelForm):
 
 class PostAdmin(admin.ModelAdmin):
     model = PostModel
-    inlines = [ImageInline,]
     form = PostAdminForm
 
     # Limit author query-set to staff members
@@ -32,6 +30,5 @@ class PostAdmin(admin.ModelAdmin):
         return form
     
 # register models
-admin.site.register(Image, ImageAdmin)
 admin.site.register(PostModel, PostAdmin)
 
