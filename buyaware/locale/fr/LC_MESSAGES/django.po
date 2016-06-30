@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-27 20:26+0000\n"
+"POT-Creation-Date: 2016-06-30 22:07+0000\n"
 "PO-Revision-Date: 2016-06-27 22:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,15 +18,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.8\n"
 
-#: buyaware/settings.py:142
+#: buyaware/settings.py:145
 msgid "English"
 msgstr "Anglais"
 
-#: buyaware/settings.py:143
+#: buyaware/settings.py:146
 msgid "Deutsch"
 msgstr "Allemand"
 
-#: buyaware/settings.py:144
+#: buyaware/settings.py:147
 msgid "Francais"
 msgstr "Francais"
 

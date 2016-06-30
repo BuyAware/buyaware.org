@@ -3,6 +3,6 @@ from .models import PostModel
 
 # Provide fields to translate blog posts in the registered languages
 class PostModelTranslationOptions(TranslationOptions):
-    fields = ('title', 'body')
+    fields = ('title', 'body', 'abstract')
 
 translator.register(PostModel, PostModelTranslationOptions)

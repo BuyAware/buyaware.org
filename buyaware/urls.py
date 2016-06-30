@@ -19,6 +19,9 @@ urlpatterns = [
     # Tinymce, a WYSIWIG text editor
     url(r'^tinymce/', include('tinymce.urls')),
 
+    # Photologue 
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

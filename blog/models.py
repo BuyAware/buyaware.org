@@ -9,10 +9,13 @@ class PostModel(models.Model):
     '''
 
     # Title of the post
-    title = models.CharField(max_length = 255, unique = True)
+    title = models.CharField(max_length = 100, unique = True)
 
     # Slug, name used in the url
-    slug = models.SlugField(max_length = 255, unique = True)
+    slug = models.SlugField(max_length = 100, unique = True)
+
+    # Abstract
+    abstract = models.CharField(max_length = 255)
 
     # content of the post
     body = models.TextField()
@@ -33,19 +36,3 @@ class PostModel(models.Model):
     def get_absolute_url(self):
         return reverse('blog:post_detail', args=(self.slug,))
 
-
-    
-class Image(models.Model):
-    '''
-    A post can contain zero, one or many images.
-    '''
-    post = models.ManyToManyField(PostModel)
-
-    # image name
-    name = models.CharField(max_length = 100, unique = True)
-
-    # image field
-    image = models.ImageField();
-
-    def __unicode__(self):
-        return self.name
