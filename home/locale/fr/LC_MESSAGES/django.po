@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-30 22:07+0000\n"
+"POT-Creation-Date: 2016-07-30 15:28+0000\n"
 "PO-Revision-Date: 2016-06-27 22:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,11 +22,57 @@ msgstr ""
 msgid "Let's get started..."
 msgstr "Commence tout de suite"
 
-#: home/templates/home/home.html:37 home/templates/home/home_page.html:39
+#: home/templates/home/home.html:37 home/templates/home/home_page.html:111
+msgid "Contact Us"
+msgstr "Contacte nous"
+
+#: home/templates/home/home.html:48 home/templates/home/home.html.py:49
+#: home/templates/home/home_page.html:122
+#: home/templates/home/home_page.html:123
+msgid "Name"
+msgstr "Nom"
+
+#: home/templates/home/home.html:49 home/templates/home/home_page.html:123
+msgid "Please enter your name."
+msgstr "Soumettez votre nom svp."
+
+#: home/templates/home/home.html:55 home/templates/home/home.html.py:56
+#: home/templates/home/home_page.html:129
+#: home/templates/home/home_page.html:130
+msgid "Email Address"
+msgstr "Adresse Email"
+
+#: home/templates/home/home.html:56 home/templates/home/home_page.html:130
+msgid "Please enter your email address."
+msgstr "Soumettez votre adresse email svp."
+
+#: home/templates/home/home.html:62 home/templates/home/home_page.html:136
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: home/templates/home/home.html:63 home/templates/home/home_page.html:137
+msgid "Phone Number (optional)"
+msgstr "Numéro de téléphone (optionnel)"
+
+#: home/templates/home/home.html:69 home/templates/home/home.html.py:70
+#: home/templates/home/home_page.html:143
+#: home/templates/home/home_page.html:144
+msgid "Message"
+msgstr "Message"
+
+#: home/templates/home/home.html:70 home/templates/home/home_page.html:144
+msgid "Please enter a message."
+msgstr "Soumettez un message svp."
+
+#: home/templates/home/home.html:78 home/templates/home/home_page.html:152
+msgid "Send"
+msgstr "Envoyer"
+
+#: home/templates/home/home_page.html:39
 msgid "About"
 msgstr "Le projet"
 
-#: home/templates/home/home.html:43 home/templates/home/home_page.html:45
+#: home/templates/home/home_page.html:45
 msgid ""
 "We are a group of students from several Swiss universities who have met at "
 "the Swiss Talent Forum 2015 in Thun, Switzerland, which is a think-tank "
@@ -39,7 +85,7 @@ msgstr ""
 "conférence sur le thème de la consommation et la croissance durable que "
 "c’est dessinée l’idée de BuyAware.  "
 
-#: home/templates/home/home.html:46 home/templates/home/home_page.html:48
+#: home/templates/home/home_page.html:48
 msgid ""
 "The objective of BuyAware is to contribute to more responsible consumption "
 "by closing information gaps in the field of electronics. By providing "
@@ -52,52 +98,6 @@ msgstr ""
 "du High-Tech. Nous visons à motiver des décisions d’achat individuelles plus "
 "consciencieuses et réfléchies. "
 
-#: home/templates/home/home.html:58 home/templates/home/home_page.html:60
+#: home/templates/home/home_page.html:60
 msgid "Meet the team"
 msgstr "Rencontre l’équipe"
-
-#: home/templates/home/home.html:109 home/templates/home/home_page.html:111
-msgid "Contact Us"
-msgstr "Contacte nous"
-
-#: home/templates/home/home.html:120 home/templates/home/home.html.py:121
-#: home/templates/home/home_page.html:122
-#: home/templates/home/home_page.html:123
-msgid "Name"
-msgstr "Nom"
-
-#: home/templates/home/home.html:121 home/templates/home/home_page.html:123
-msgid "Please enter your name."
-msgstr "Soumettez votre nom svp."
-
-#: home/templates/home/home.html:127 home/templates/home/home.html.py:128
-#: home/templates/home/home_page.html:129
-#: home/templates/home/home_page.html:130
-msgid "Email Address"
-msgstr "Adresse Email"
-
-#: home/templates/home/home.html:128 home/templates/home/home_page.html:130
-msgid "Please enter your email address."
-msgstr "Soumettez votre adresse email svp."
-
-#: home/templates/home/home.html:134 home/templates/home/home_page.html:136
-msgid "Phone Number"
-msgstr "Numéro de téléphone"
-
-#: home/templates/home/home.html:135 home/templates/home/home_page.html:137
-msgid "Phone Number (optional)"
-msgstr "Numéro de téléphone (optionnel)"
-
-#: home/templates/home/home.html:141 home/templates/home/home.html.py:142
-#: home/templates/home/home_page.html:143
-#: home/templates/home/home_page.html:144
-msgid "Message"
-msgstr "Message"
-
-#: home/templates/home/home.html:142 home/templates/home/home_page.html:144
-msgid "Please enter a message."
-msgstr "Soumettez un message svp."
-
-#: home/templates/home/home.html:150 home/templates/home/home_page.html:152
-msgid "Send"
-msgstr "Envoyer"

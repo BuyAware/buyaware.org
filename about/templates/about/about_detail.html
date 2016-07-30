@@ -1,0 +1,33 @@
+{% extends "about/about.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+BuyAware - About our vision
+{% endblock %}
+
+{% block content %}
+<body>
+  <section class="about-detail">
+    <div class="container">
+      <div class="row">
+	<div class="col-lg-12 text-center">
+          <h2>
+	    {% block detail_title %}{% endblock %}
+	  </h2>
+          <hr class="check-primary">
+        </div>
+	<div class="row">
+	  <div class="col-xs-10 col-xs-offset-1">
+	    {% block detail_text %}
+	    {% endblock %}
+	  </div>
+	</div>
+	<div class="col-lg-12 text-center">
+          <a href="{% url "about:about_index" %}"><h4>{% trans "Back" %}</h4></a>
+        </div>
+  </section>
+</body>
+
+{% endblock %}

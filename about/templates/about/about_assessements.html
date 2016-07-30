@@ -1,0 +1,41 @@
+{% extends "about/about_detail.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+BuyAware - About our assessement methods
+{% endblock %}
+
+{% block detail_title %}{% trans "Assessement methods" %}{% endblock %}
+
+{% block detail_text %}
+{% blocktrans %}
+<p>
+ We evaluate the products according to six categories: climate and energy, ecology, worker rights, conflict minerals, transparency of the company and performance. Each of these categories contains several criteria which we have to analyse during our assessments. One has to discriminate between two different types of criteria:
+</p>
+<p>
+  <ul>
+    <li>
+      Yes/No-questions: asking for example if a product contains a specific toxic substance or if the company analyses and publishes its annual CO2-footprint. With this criteria type only two results are possible: The point is given if the answer meets expectations, otherwise it is not. 
+    </li>
+    <li>
+      Questions on a linear scale asking for example how big the CO2-footprint of the product is or how much e-waste the company recycles. With this kind of criteria we first have to define an upper and lower threshold; for instance 20 kg CO2 and 100 kg CO2 for the CO2-footprint-criteria. In this case the product would get the full point if it has a CO2-footprint of 20 kg and less, zero points for 100 kg and more. For values lying between the two thresholds we operate on a linear scale meaning that 40 kg CO2 would result in 0.8 points and so on.
+    </li>
+  </ul>
+</p>
+<p>
+  In situations where we are not able to find any suitable information the product gets zero points. In very few cases the information available does not completely relate to the criteria. Then, we are forced to interpret the data to the best of our ability. If a product performs particularly well we assign bonus points.
+</p>
+<p>
+  It is important to us that our users can understand our assessments in every detail. That is why there is a short comment and a link to our source for every single criteria of the analyses.
+</p>
+<p>
+  As soon as all 48 criteria of our list have been assessed six category scores are calculated. It is relevant to know that not all criteria of a category are weighted equally. For instance, the five questions about the presence of certain toxic substances are all weighted a lot less than the criteria asking about the degree of recycling of the company.
+</p>
+<p>
+  The results of all six categories are then summarised in our spiderweb product profiles and the total score is calculated.
+</p>
+{% endblocktrans %}
+{% endblock %}
+
