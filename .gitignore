@@ -1,0 +1,23 @@
+# ignore migration files
+**/migrations/**
+
+# ignore pid files
+*.pid
+
+# ignore mydatabase
+mydatabase
+
+# ignore .pyc files because they are binaries.
+*.pyc
+
+# ignore deployement settings containing confedential information
+./buyaware/settings_deployment*
+
+# ignore backup files
+*~
+
+# ignore compiled translation files
+*.mo
+
+# ignore photologue media
+./buyaware/media/photologue/*

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-07 22:08+0000\n"
+"POT-Creation-Date: 2016-06-30 22:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: buyaware/settings.py:136
+#: buyaware/settings.py:145
 msgid "English"
 msgstr ""
 
-#: buyaware/settings.py:137
+#: buyaware/settings.py:146
 msgid "Deutsch"
+msgstr ""
+
+#: buyaware/settings.py:147
+msgid "Francais"
+msgstr ""
+
+#: buyaware/templates/base.html:59
+msgid "Blog"
+msgstr ""
+
+#: buyaware/templates/base.html:98
+msgid "Location"
+msgstr ""
+
+#: buyaware/templates/base.html:99
+msgid "Switzerland"
+msgstr ""
+
+#: buyaware/templates/base.html:102
+msgid "Around the Web"
 msgstr ""

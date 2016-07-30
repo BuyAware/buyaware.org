@@ -10,7 +10,7 @@ DATABASES = {
         'NAME': 'buyaware_buyaware',
         'USER': 'buyaware',
         'PASSWORD': 'Admin@BuyAware4Life!',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': '',
     }
    }

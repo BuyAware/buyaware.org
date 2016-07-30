@@ -1,13 +1,9 @@
-Django==1.9.4
-django-bootstrap3==7.0.0
+Django==1.8.13
+django-modeltranslation==0.11
+django-photologue==3.5.1
+django-sortedm2m==1.3.2
+django-tinymce==2.3.0
 docutils==0.12
-pillow==3.2.0
-
-###############################################################################
-# OTHER REQUIREMENTS (NON-PYTHON RELATED)
-###############################################################################
-# gettext (0.15 or higher): 
-# 	Used for creating and compiling translation files
-#	Mac: 	
-#		get with $brew install gettext, 
-#	     	create link $brew link gettext --force 	
+ExifRead==2.1.2
+Pillow==3.2.0
+pytz==2016.4

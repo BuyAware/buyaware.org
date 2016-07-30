@@ -75,7 +75,8 @@ STATICFILES_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'home.apps.HomeConfig',   
+    'home.apps.HomeConfig',
+    'blog',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
@@ -84,6 +85,13 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    ### IMPORTED PROJECTS ###
+    'modeltranslation',   # translate model data in registered languages
+    'tinymce',   # WYSIWIG richtext editor
+    'photologue',   # Picture management tool and toolbox
+    'sortedm2m',   # custom many2many relationship which remembers order
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -136,8 +144,27 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 LANGUAGES = (
     ('en', _('English')),
     ('de', _('Deutsch')),
+    ('fr', _('Francais')),
 )
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+
+# <----- BLOG SETTINGS -----> 
+
+POSTS_PER_PAGE = 5
+
+
+# <----- TINYMCE SETTINGS -----> 
+
+TINYMCE_JS_URL = STATIC_URL + 'js/tinymce/tinymce.min.js'
+TINYMCE_JS_ROOT = STATIC_ROOT + 'js/tinymce'
+TINYMCE_DEFAULT_CONFIG = {
+    #'toolbar': ,
+    'plugins': "table,spellchecker,paste,searchreplace, image imagetools",
+    'theme': "modern",
+    'imagetools_cors_hosts': ['buyaware.org'],
+}
+TINYMCE_SPELLCHECKER = True

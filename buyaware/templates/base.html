@@ -15,26 +15,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BuyAware - Home Page</title>
+    <title>{% block title %} BuyAware - Home Page {% endblock %}</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{% static "css/freelancer.css" %}" rel="stylesheet">
+    {% block styling %}    
+    {% endblock %}
 
     <!-- Custom Fonts -->
     <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    
 </head>
 
 <body id="page-top" class="index">
@@ -57,35 +52,38 @@
             
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-		{% block navbar_links %}
-               
-		{% endblock %}
-		    <li>
-		      <div class="language_selector">
-			<form action="{% url 'set_language' %}" method="post">
-			  {% csrf_token %}
-			  <input name="next" type="hidden" value="/" />
-			  <select name="language">
-			  
-			  {% get_available_languages as LANGUAGES %}
-			  {% get_language_info_list for LANGUAGES as languages %}
-			  {% for language in languages %}
-			  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-			    {{ language.code|upper}}
+		<li class="hidden">
+		  <a href="#page-top"></a>
+		</li>
+		<li class="page-scroll">
+		  <a href="{% url 'blog:blog_index' %}">{% trans "Blog" %}</a>
+		</li>
+		<li>
+		  <div class="language_selector">
+		    <form action="{% url 'set_language' %}" method="post">
+		      {% csrf_token %}
+		      <input name="next" type="hidden" value="/" />
+		      <select name="language">
+			
+			{% get_available_languages as LANGUAGES %}
+			{% get_language_info_list for LANGUAGES as languages %}
+			{% for language in languages %}
+			<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+			  {{ language.code|upper}}
 			  </option>
-			  {% endfor %}
-			  </select>
-			  <input type="submit" value="Go" />
-			</form>
-		      <div>
-		    </li>
+			{% endfor %}
+		      </select>
+		      <input type="submit" value="Go" />
+		    </form>
+		    <div>
+		</li>
               </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+              </div>
+              <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
     </nav>
-
+    
 {% block content %}
     
 {% endblock %}
@@ -145,7 +143,7 @@
     {% endblock %}
     <!-- Custom Theme JavaScript -->
     <script src="{% static "js/freelancer.js" %}"></script>
-
+    <script src="{% static "js/navbarPadding.js" %}"></script>
 </body>
 
 </html>
