@@ -28,6 +28,7 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Localized urls (various languages available)
 urlpatterns += i18n_patterns(
+    url('^about/', include('about.urls', namespace='about')),
     url('^blog/', include('blog.urls', namespace='blog')),
     url('^admin/', include(admin.site.urls)),
     url('^', include('home.urls', namespace='home')),

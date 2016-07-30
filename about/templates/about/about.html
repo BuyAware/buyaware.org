@@ -1,0 +1,384 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+BuyAware - About
+{% endblock %}
+
+{% block styling %}
+<link href="{% static "about/css/about.css" %}" rel="stylesheet">
+<link href="{% static "about/css/timeline.css" %}" rel="stylesheet">
+
+<style>
+header.about {
+    margin: 0;
+    background: url({% static "img/about.jpg" %});
+    background-size: cover; 
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 200px 0;
+}
+</style>
+{% endblock%}
+
+{% block content %}
+<header class="about"></header>
+
+<body>
+
+<!-- Facebook js SDK !-->
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/{% trans "en_EN" %}/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<section class="success" id="intro">
+    <div class="container">
+      <div class="row">
+	<div class="col-lg-12 text-center">
+          <h2>{% trans "What's BuyAware?" %}</h2>
+          <hr class="check-light">
+        </div>
+      </div>
+	<div class="row">
+	  <div class="col-xs-10 col-xs-offset-1">
+	  {% blocktrans %}
+	  <p>
+	   We are a group of young students from different regions of Switzerland who met at the Swiss Talent Forum in 2015. It was here that we initiated the BuyAware project, and have been developing the idea ever since.
+	  </p>
+	  <p>
+It is our goal to inform consumers about the ecological and ethical background of different products in of the electronics sector, so that the consumers can make a more responsible purchase decision. In order to do so we assess the devices according to six categories: climate and energy, ecology, worker rights, conflict minerals, transparency of the company and performance. The results of these assessments are then merged to form the product profile which our users can access over our database and use for comparison purposes. It is important to us that we present our assessments in an all-in-one format so that our customers can immediately see where a product has its strengths and weaknesses. Additionally, we understand that different people have different needs, which is why the weightings of our six assessed categories can be adjusted individually, so that we are able to give the most helpful feedback possible.
+	  </p>
+	  <p>
+At the moment, we focus our activities only on smartphones. In the long run however, we are planning on expanding our service to cover all products in the electronics sector.
+	  </p>
+	  {% endblocktrans %}
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-10 col-xs-offset-1">
+	    <h4>{% trans "Find out more about..." %}</h4>
+	    <p><a href="{% url "about:drive" %}">...{% trans "what drives us" %}</a></p>
+	    <p><a href="{% url "about:assessements"%}">...{% trans "our assessement methods" %}</a></p>
+	    <p><a href="{% url "about:spiderweb"%}">...{% trans "our spiderweb design" %}</a></p>
+	    <p><a href="{% url "about:personal_service"%}">...{% trans "our personnalized service" %}</a></p>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-lg-12 text-center" style="padding-top:50px;">
+            <div class="fb-like" data-href="https://www.facebook.com/BuyAwareMovement" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" data-size="large"></div>
+          </div>
+	</div>
+      </div>
+  </section>
+
+<section id="timeline">
+  <div class="container">
+    <div class="row">
+	<div class="col-lg-12 text-center">
+          <h2>{% trans "Key Events" %}</h2>
+          <hr class="check-primary">
+        </div>
+      </div>
+    <div class="row">
+      <div class = "col-lg-12">
+	
+	<ul class="timeline">
+          <li>
+          <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">{% trans "The Beginning" %}</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i> {% trans "January 2015" %}</small></p>
+            </div>
+	    <div class="timeline-img">
+	      <img src="{% static "about/img/timeline/STF2015.jpg" %}" class="img-responsive">
+	    </div>
+            <div class="bigtext timeline-body">
+              <p>{% trans "BuyAware first came up at the Swiss Talent Forum, a think tank organized by Swiss Youth in Science. One group had the task of finding a new policy related to technology and ecology that will influence smart and sustainable progress in the next 10 years. They decided to design a government funded, NGO coordinated database that gives the consumer feedback on the ecology and fairness of her/his consumption behavior through alerts in a smartphone application. They chose to name the idea BuyAware." %}
+</p>
+            </div>
+	    <p class="expand close-last">{% trans "More"%} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+          </div>
+          </li>
+	  
+          <!-- <li class="timeline-inverted"> -->
+<!--             <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div> -->
+<!--             <div class="timeline-panel"> -->
+<!--             <div class="timeline-heading"> -->
+<!--               <h4 class="timeline-title">{% trans "Early Development" %}</h4> -->
+<!--               <p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i>{% trans  "April 2015" %}</small></p> -->
+<!--             </div> -->
+<!--             <div class="bigtext timeline-body"> -->
+<!--               <p>{% trans "After the Swiss Talent Forum 2015 it was offered that some projects could be pursued beyond the event, if enough people were interested. BuyAware was one oft two projects, which were given this opportunity. In the following months under the guidance of coach Fabienne Felder, a group of students tried adapting BuyAware in a sense that it could become feasible." %} -->
+<!-- </p> -->
+<!--             </div> -->
+<!-- 	    <p class="expand close-last">{% trans "More"%} <i class="fa fa-arrow-down"></i></p> -->
+<!-- 	    <p class="contract hide">{% trans "Hide" %}  <i class="fa fa-arrow-up"></i></p> -->
+<!--           </div> -->
+<!--           </li> -->
+
+	  <li class="timeline-inverted">
+            <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+            <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">{% trans "Survey" %}</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i> {% trans "Autumn 2015" %}</small></p>
+            </div>
+	    <div class="timeline-img">
+	      <img src="{% static "about/img/timeline/Survey.png" %}" class="img-responsive">
+	    </div>
+            <div class="bigtext timeline-body">
+              <p>
+		{% trans "In order to get a better view of what other people thought about BuyAware, its potential and in what sector BuyAware should be tested, an online survey was created and distributed over Facebook. It was at this point we concluded to start focusing our project on electronics." %}
+	      </p>
+            </div>
+	    <p class="expand close-last">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+          </div>
+          </li>
+
+	  <li>
+            <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+            <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">{% trans "STF 2016" %}</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i> {% trans "January 2016" %}</small></p>
+            </div>
+	    <div class="timeline-img">
+	      <img src="{% static "about/img/timeline/STF2016.jpg" %}" class="img-responsive">
+	    </div>
+            <div class="bigtext timeline-body">
+              <p>
+		{% trans "Swiss Youth in Science gave us the oportunity to present our project at the Swiss Talent Forum 2016 and organise a workshop at the event. This gave us some valuable feedback on how we should continue with our project." %}
+	      </p>
+            </div>
+	    <p class="expand close-last">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+          </div>
+          </li>
+
+	  <li class="timeline-inverted">
+            <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+            <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">{% trans "GenerActions" %}</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i> {% trans "April 2016" %}</small></p>
+            </div>
+	    <div class="timeline-img">
+	      <img src="{% static "about/img/timeline/Generaction.jpg" %}" class="img-responsive">
+	    </div>
+            <div class="bigtext timeline-body">
+              <p>
+		{% trans "To get more feedback also from other age groups (our online survey had mostly been spread among peers), we attended the GenerActions event organised by Infoklick Zentralschweiz." %} 
+	      </p>
+            </div>
+	    <p class="expand close-last">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+          </div>
+          </li>
+
+	   <li>
+            <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+            <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">{% trans "LUGA" %}</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i> {% trans "May 2016" %}</small></p>
+            </div>
+	    <div class="timeline-img">
+	      <img src="{% static "about/img/timeline/LUGA.jpg" %}" class="img-responsive">
+	    </div>
+            <div class="bigtext timeline-body">
+              <p>
+		{% trans "On May 8th we had the opportunity to attend the LUGA fair in Lucerne. There we were able to present our project to the general public for the first time. At our stand people were able to try our a prototype of our app, as well as compete in a game. We received a lot of positive feedback and the event was definitely a good moral boost for the whole team!" %}
+	      </p>
+            </div>
+	    <p class="expand close-last">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+          </div>
+          </li>
+
+	   <li class="timeline-inverted">
+            <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+            <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">{% trans "In Development" %}</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-calendar"></i>{% trans "Summer 2016" %}</small></p>
+            </div>
+	    <div class="timeline-img">
+	    </div>
+            <div class="timeline-body">
+              <p>
+		{% trans "It is our goal to have a running prototype of our Database before the end of this summer. Stay tuned by liking our facebook page !!" %}
+	      </p>
+	      <div class="fb-like" data-href="https://www.facebook.com/BuyAwareMovement" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" data-size="large" style="padding-top:15px"></div>
+            </div>
+          </div>
+          </li>
+
+	</ul>
+      </div>
+    </div>
+  </div><!-- container !-->
+</section><!-- section id="timeline" !-->
+  
+<section class="success" id ="team">
+    <div class="container">
+      <div class="row">
+	<div class="col-lg-12 text-center">
+          <h2>{% trans "Meet the team" %}</h2>
+          <hr class="check-light">
+        </div>
+	<div class="row">
+	  <div class="col-md-3 text-center">
+	    <img src="{% static "img/profiles/jonas.png" %}" alt="member's name" class="img-circle center-block profile" style="width:200px;height:200px;">
+	    
+	  </div>
+		
+	  <div class="col-md-9">
+	    <h4>Jonas Niederberger</h4>
+	    <blockquote class="bigtext profile">
+	    {% blocktrans %}
+	    <p>
+	      Jonas Niederberger acts as the project coordinator. Additionally, Jonas’ responsibilities include networking with other organisations, designing our App, project development as well as PR-work. If anyone has an overview of what currently is going on in our project, it’s Jonas!
+	    </p>
+	    <p>
+	      "Developing a project like BuyAware alongside a very bright, enthusiastic and motivated team gives us the chance to actively be part of a movement, instead of just being a bystander. My goal is, that with BuyAware, we will get one step closer to spread global empathy and awareness."
+	    </p>
+	    <p>
+	      At the moment Jonas is in a gap year. This autumn he will start studying international affairs at the University of St. Gallen in the Assessment Year. He loves doing sports, especially hiking and climbing, and being in the fresh, exhilarating mountain air.
+	    </p>
+	    {% endblocktrans %}
+	    </blockquote>
+	    <p class="expand">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+	  </div>
+	</div>
+		  
+	<div class="row">
+	  <div class="col-md-3 text-center">
+	    <img src="{% static "img/profiles/eric.jpg" %}" alt="member's name" class="img-circle center-block profile" style="width:200px;height:200px;">
+	    
+	  </div>
+	  
+	  <div class="col-md-9">
+	    <h4>Eric Brunner</h4>
+	    <blockquote class="bigtext profile">
+	      {% blocktrans %}
+	      <p>
+		Eric Brunner concentrates mainly on the tech aspects. He’s responsible for the Web-appearance and the database of the project. Therefore: If you need to program something, Eric is definitely the right guy to talk to!
+	      </p>
+	      <p>
+		"Being part of a group of young, bright students with a visionary idea is what motivates me!" 
+	      </p>
+	      <p>
+		Eric spends most of his time studying at EPFL to become a mechanical engineer and he simply loves cycling.
+	      </p>
+	      {% endblocktrans %}
+	    </blockquote>
+	    <p class="expand">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+	  </div>
+	</div>
+		  
+	<div class="row">
+	  <div class="col-md-3 text-center">
+	    <img src="{% static "img/profiles/patrick.png" %}" alt="member's name" class="img-circle center-block profile" style="width:200px;height:200px;">
+		       
+	  </div>
+	  
+	  <div class="col-md-9">
+	    <h4>Patrick Weber</h4>
+	    <blockquote class="bigtext profile">
+	    {% blocktrans %}
+	    <p>
+	      Patrick Weber is the mind behind the list of criterias and the assessement method. Furthermore, he’s the one who designed the logo and analysed the survey we did last autumn. If you’d like to know what the mathematical background of our product assessments is, Patrick will be happy to explain!
+	    </p>
+	    <p>
+"I've always been very interested in environmental topics (especially climate change). With BuyAware I now have the possibility to actually contribute something to this myself, rather than just sitting around talking about it." 
+	    </p>
+	    <p>
+When Patrick isn't working on the BuyAware-project, he mainly spends his time at the University of Basel studying Nanoscience. In his free time, he likes playing the guitar and the drums and doing all kinds of sports, mainly football and badminton.
+	    </p>
+	    {% endblocktrans %}
+	    </blockquote>
+	      <p class="expand">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	      <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+	  </div>
+	</div>
+      
+      <div class="row">
+	  <div class="col-md-3 text-center">
+	    <img src="{% static "img/profiles/petra.png" %}" alt="member's name" class="img-circle center-block profile" style="width:200px;height:200px;">
+	    </div>
+	  
+	  <div class="col-md-9">
+	    <h4>Petra Balbi</h4>
+	    <blockquote class="bigtext profile">
+	      {% blocktrans %}
+	      <p>
+		Petra Balbi primarily concentrates on gathering information for our database and conducting assessments for different products. So if you have a question concerning the information behind a product assessment, Petra will be your woman to ask.
+	      </p>
+	      <p>
+		“I’m fascinated by how a project develops step by step and how far you can come if you are determined enough. It’s an honour to be part of such a motivated and fun team and I’m curious to where BuyAware will lead us”
+	      </p>
+	      <p>
+		After her Gap-Year, in which she travelled a lot, Petra will start with her studies this September in Zurich. When she’s at home she likes to discover the mountains mostly on skis but also on foot. Furthermore, she is engaged in the JUBLA, loves to dance (ballet or modern) and occasionally plays the flute.
+	      </p>
+	      {% endblocktrans %}
+	    </blockquote>  
+	    
+	    <p class="expand">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	    <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+	    
+	  </div>
+      </div>
+      
+      <div class="row">
+	<div class="col-md-3 text-center">
+	  <img src="{% static "img/profiles/christian.png" %}" alt="member's name" class="img-circle center-block profile" style="width:200px;height:200px;">
+	      
+	    </div>
+	
+	<div class="col-md-9">
+	  <h4>Christian Küttel</h4>
+	  <blockquote class="bigtext profile">
+	    {% blocktrans %}
+	    <p>
+	      Christian Küttel has mainly been helping Eric with the website so far. Additionally he also was the guy who came up with the spiderweb as a mean to visualise our assessment results. So if you need someone to explain how you can extract the information you want out of our product-spiderwebs, he’s certainly the guy to talk to!
+	    </p>
+	    <p>
+	      "What keeps me motivated is friends or other people who walk up to me and ask me about BuyAware and how it is developing. I also realized how much I can learn from a project like this."
+	    </p>
+	    <p>
+	      During weekdays Christian is busy studying mechanical engineering at the ETH. He also enjoys doing sports and being active in general.
+	    </p>
+	    {% endblocktrans %}
+	  </blockquote>
+	  <p class="expand">{% trans "More" %} <i class="fa fa-arrow-down"></i></p>
+	  <p class="contract hide">{% trans "Hide" %} <i class="fa fa-arrow-up"></i></p>
+
+	</div>
+      </div>
+      
+    </div>
+  </div>
+  </section>
+</body>	
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "about/js/bigtext.js" %}"></script>
+{% endblock %}

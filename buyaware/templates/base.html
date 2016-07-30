@@ -15,13 +15,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block title %} BuyAware - Home Page {% endblock %}</title>
+    <title>
+      {% block title %} BuyAware - Home Page {% endblock %}
+    </title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{% static "css/freelancer.css" %}" rel="stylesheet">
+    
     {% block styling %}    
     {% endblock %}
 
@@ -35,6 +38,10 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
+
+{% block add_navbar %}
+{% endblock %}
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,9 +62,11 @@
 		<li class="hidden">
 		  <a href="#page-top"></a>
 		</li>
-		<li class="page-scroll">
-		  <a href="{% url 'blog:blog_index' %}">{% trans "Blog" %}</a>
-		</li>
+		<!-- <li> -->
+		<!--   <a href="{% url 'blog:blog_index' %}">{% trans "Blog" %}</a> -->
+		<!-- </li> -->
+		<li>
+		  <a href="{% url 'about:about_index' %}">{% trans "About" %}</a>
 		<li>
 		  <div class="language_selector">
 		    <form action="{% url 'set_language' %}" method="post">
@@ -143,7 +152,7 @@
     {% endblock %}
     <!-- Custom Theme JavaScript -->
     <script src="{% static "js/freelancer.js" %}"></script>
-    <script src="{% static "js/navbarPadding.js" %}"></script>
+    
 </body>
 
 </html>

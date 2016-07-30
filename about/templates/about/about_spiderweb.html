@@ -1,0 +1,38 @@
+{% extends "about/about_detail.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+BuyAware - About our assessement methods
+{% endblock %}
+
+{% block detail_title %}{% trans "Spiderweb design" %}{% endblock %}
+
+{% block detail_text %}
+
+{% comment "Displayed images"%} {% endcomment %}
+{% static "about/img/details/spiderweb.png" as img_url1 %}
+{% static "about/img/details/spiderweb.png" as img_url2 %}
+
+{% blocktrans %}
+<p>
+In our opinion, a major problem of the existing labels is that they only cover one of many relevant factors. Another concern is the large number of labels, which can confuse the consumer. The need for an all-in-one-label is undeniable.
+</p>
+<p>
+In order to avoid making the same mistakes we have set ourselves the goal to present our results in a way which is as simple as possible. We already made this decision at a very early stage of our project. It should immediately be evident where the strengths and weaknesses of a product lie. That is why we have chosen the spiderweb design.
+</p>
+
+<img src="{{ img_url1 }}" class="img-details"> 
+
+<p>
+Every axis represents a category. The closer to the centre the data point is, the worse the product has been evaluated in the corresponding category.
+</p>
+<p>
+The spiderweb design also has another advantage: It is extremely easy to compare two profiles with each other from an illustrative point of view.
+</p>
+
+<img src="{{ img_url2 }}" class="img-details"> 
+{% endblocktrans %}
+{% endblock %}
+

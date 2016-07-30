@@ -1,0 +1,32 @@
+{% extends "about/about_detail.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load static %}
+
+{% block title %}
+BuyAware - About our assessement methods
+{% endblock %}
+
+{% block detail_title %}{% trans "Personalized service" %}{% endblock %}
+
+{% block detail_text %}
+
+{% comment "Displayed images"%} {% endcomment %}
+{% static "about/img/details/personalise.png" as img_url %}
+
+{% blocktrans %}
+<p>
+  It was important to us that our assessments are not static but can adjust according to the taste of the user. In order to personalise our service our customers can create their own spiderweb profile, thereby signalising which categories are particularly important to them.
+</p>
+<p>
+On the basis of the user profile the total scores of our assessed products are then recalculated (without personalisation all categories are weighted equally). This may lead to situations where for user A device X appears at the very top in the ranking whereas for user B it is device Y.
+</p>
+<p>
+In addition to that, the creation of a personal user profile enables us to individually recommend devices to our customers based on similar spiderwebs.
+</p>
+
+<img src="{{ img_url }}" class="img-details"></img> 
+{% endblocktrans %}
+{% endblock %}
+
