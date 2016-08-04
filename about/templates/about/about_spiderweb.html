@@ -3,6 +3,8 @@
 {% load i18n %}
 {% load staticfiles %}
 
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block title %}
 BuyAware - About our assessement methods
 {% endblock %}
@@ -12,8 +14,14 @@ BuyAware - About our assessement methods
 {% block detail_text %}
 
 {% comment "Displayed images"%} {% endcomment %}
-{% static "about/img/details/spiderweb.png" as img_url1 %}
-{% static "about/img/details/spiderweb.png" as img_url2 %}
+{% if LANGUAGE_CODE == 'de' %}
+{% static "about/img/details/spiderweb_de.png" as img_url1 %}
+{% static "about/img/details/compare_de.png" as img_url2 %}
+{% else %}
+{% static "about/img/details/spiderweb_en.png" as img_url1 %}
+{% static "about/img/details/compare_en.png" as img_url2 %}
+{% endif %}
+
 
 {% blocktrans %}
 <p>

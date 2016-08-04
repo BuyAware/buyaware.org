@@ -4,6 +4,8 @@
 {% load staticfiles %}
 {% load static %}
 
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block title %}
 BuyAware - About our assessement methods
 {% endblock %}
@@ -13,7 +15,11 @@ BuyAware - About our assessement methods
 {% block detail_text %}
 
 {% comment "Displayed images"%} {% endcomment %}
-{% static "about/img/details/personalise.png" as img_url %}
+{% if LANGUAGE_CODE == 'de' %}
+{% static "about/img/details/personalise_de.png" as img_url %}
+{% else %}
+{% static "about/img/details/personalise_en.png" as img_url %}
+{% endif %}
 
 {% blocktrans %}
 <p>
