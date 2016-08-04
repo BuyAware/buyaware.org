@@ -145,7 +145,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 LANGUAGES = (
     ('en', _('English')),
     ('de', _('Deutsch')),
-    ('fr', _('Francais')),
+#    ('fr', _('Francais')),
 )
 
 LOCALE_PATHS = (
