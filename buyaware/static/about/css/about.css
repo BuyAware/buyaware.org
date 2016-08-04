@@ -1,0 +1,49 @@
+/**
+ * General styling
+ */
+
+li ul{
+    font-size: 20px;
+}
+
+p {
+    text-align: justify;
+}
+
+
+/**
+ * Timeline styling
+ */
+
+.timeline-img {
+    padding-bottom: 10px;
+}
+
+
+/**
+ * Team section styling
+ */
+
+section#team div.row {
+    padding-top: 50px;
+}
+
+/**
+ * About details styling
+ */
+
+@media(min-width:768px) {
+    section.about-detail {
+	padding-top: 175px; 
+    }
+}
+
+.img-details {
+    padding-top:20px;
+    padding-bottom: 20px;
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

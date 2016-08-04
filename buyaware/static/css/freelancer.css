@@ -506,3 +506,8 @@ footer .footer-below {
 .language_selector {
     padding: 15px;
 }
+
+/* styling for expandable texts */
+.bigtext {
+    overflow: hidden;
+}
