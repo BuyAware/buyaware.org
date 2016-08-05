@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 18:14+0000\n"
+"POT-Creation-Date: 2016-08-05 21:15+0000\n"
 "PO-Revision-Date: 2016-06-27 22:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.8\n"
 
-#: templates/home/home.html:21 templates/home/home_page.html:23
+#: home/templates/home/home.html:21 home/templates/home/home_page.html:23
 msgid "Let's get started..."
 msgstr "Commence tout de suite"
 
@@ -26,7 +26,7 @@ msgstr "Commence tout de suite"
 msgid "What is BuyAware?"
 msgstr ""
 
-#: templates/home/home.html:43
+#: home/templates/home/home.html:43
 msgid ""
 "\n"
 "\t<p>\n"
@@ -57,58 +57,61 @@ msgid ""
 "\t"
 msgstr ""
 
-#: templates/home/home.html:59
+#: home/templates/home/home.html:59
 msgid "Find out more"
 msgstr ""
 
-#: templates/home/home.html:72 templates/home/home_page.html:111
+#: home/templates/home/home.html:72 home/templates/home/home_page.html:111
 msgid "Contact Us"
 msgstr "Contacte nous"
 
-#: templates/home/home.html:83 templates/home/home.html.py:84
-#: templates/home/home_page.html:122 templates/home/home_page.html.py:123
+#: home/templates/home/home.html:83 home/templates/home/home.html.py:84
+#: home/templates/home/home_page.html:122
+#: home/templates/home/home_page.html:123
 msgid "Name"
 msgstr "Nom"
 
-#: templates/home/home.html:84 templates/home/home_page.html:123
+#: home/templates/home/home.html:84 home/templates/home/home_page.html:123
 msgid "Please enter your name."
 msgstr "Soumettez votre nom svp."
 
-#: templates/home/home.html:90 templates/home/home.html.py:91
-#: templates/home/home_page.html:129 templates/home/home_page.html.py:130
+#: home/templates/home/home.html:90 home/templates/home/home.html.py:91
+#: home/templates/home/home_page.html:129
+#: home/templates/home/home_page.html:130
 msgid "Email Address"
 msgstr "Adresse Email"
 
-#: templates/home/home.html:91 templates/home/home_page.html:130
+#: home/templates/home/home.html:91 home/templates/home/home_page.html:130
 msgid "Please enter your email address."
 msgstr "Soumettez votre adresse email svp."
 
-#: templates/home/home.html:97 templates/home/home_page.html:136
+#: home/templates/home/home.html:97 home/templates/home/home_page.html:136
 msgid "Phone Number"
 msgstr "Numéro de téléphone"
 
-#: templates/home/home.html:98 templates/home/home_page.html:137
+#: home/templates/home/home.html:98 home/templates/home/home_page.html:137
 msgid "Phone Number (optional)"
 msgstr "Numéro de téléphone (optionnel)"
 
-#: templates/home/home.html:104 templates/home/home.html.py:105
-#: templates/home/home_page.html:143 templates/home/home_page.html.py:144
+#: home/templates/home/home.html:104 home/templates/home/home.html.py:105
+#: home/templates/home/home_page.html:143
+#: home/templates/home/home_page.html:144
 msgid "Message"
 msgstr "Message"
 
-#: templates/home/home.html:105 templates/home/home_page.html:144
+#: home/templates/home/home.html:105 home/templates/home/home_page.html:144
 msgid "Please enter a message."
 msgstr "Soumettez un message svp."
 
-#: templates/home/home.html:113 templates/home/home_page.html:152
+#: home/templates/home/home.html:113 home/templates/home/home_page.html:152
 msgid "Send"
 msgstr "Envoyer"
 
-#: templates/home/home_page.html:39
+#: home/templates/home/home_page.html:39
 msgid "About"
 msgstr "Le projet"
 
-#: templates/home/home_page.html:45
+#: home/templates/home/home_page.html:45
 msgid ""
 "We are a group of students from several Swiss universities who have met at "
 "the Swiss Talent Forum 2015 in Thun, Switzerland, which is a think-tank "
@@ -121,7 +124,7 @@ msgstr ""
 "conférence sur le thème de la consommation et la croissance durable que "
 "c’est dessinée l’idée de BuyAware.  "
 
-#: templates/home/home_page.html:48
+#: home/templates/home/home_page.html:48
 msgid ""
 "The objective of BuyAware is to contribute to more responsible consumption "
 "by closing information gaps in the field of electronics. By providing "
@@ -134,6 +137,6 @@ msgstr ""
 "du High-Tech. Nous visons à motiver des décisions d’achat individuelles plus "
 "consciencieuses et réfléchies. "
 
-#: templates/home/home_page.html:60
+#: home/templates/home/home_page.html:60
 msgid "Meet the team"
 msgstr "Rencontre l’équipe"
