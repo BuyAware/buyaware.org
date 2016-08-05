@@ -21,3 +21,6 @@ mydatabase
 
 # ignore photologue media
 ./buyaware/media/photologue/*
+
+# ignore merge files 
+*.orig

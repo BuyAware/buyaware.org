@@ -8,7 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 16:03+0000\n"
+"POT-Creation-Date: 2016-08-04 11:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,73 +26,38 @@ msgid "en_EN"
 msgstr ""
 
 #: about/templates/about/about.html:48
-msgid "What's BuyAware?"
-msgstr ""
-
-#: about/templates/about/about.html:54
-msgid ""
-"\n"
-"\t  <p>\n"
-"\t   We are a group of young students from different regions of Switzerland "
-"who met at the Swiss Talent Forum in 2015. It was here that we initiated the "
-"BuyAware project, and have been developing the idea ever since.\n"
-"\t  </p>\n"
-"\t  <p>\n"
-"It is our goal to inform consumers about the ecological and ethical "
-"background of different products in of the electronics sector, so that the "
-"consumers can make a more responsible purchase decision. In order to do so "
-"we assess the devices according to six categories: climate and energy, "
-"ecology, worker rights, conflict minerals, transparency of the company and "
-"performance. The results of these assessments are then merged to form the "
-"product profile which our users can access over our database and use for "
-"comparison purposes. It is important to us that we present our assessments "
-"in an all-in-one format so that our customers can immediately see where a "
-"product has its strengths and weaknesses. Additionally, we understand that "
-"different people have different needs, which is why the weightings of our "
-"six assessed categories can be adjusted individually, so that we are able to "
-"give the most helpful feedback possible.\n"
-"\t  </p>\n"
-"\t  <p>\n"
-"At the moment, we focus our activities only on smartphones. In the long run "
-"however, we are planning on expanding our service to cover all products in "
-"the electronics sector.\n"
-"\t  </p>\n"
-"\t  "
-msgstr ""
-
-#: about/templates/about/about.html:70
 msgid "Find out more about..."
 msgstr ""
 
-#: about/templates/about/about.html:71
+#: about/templates/about/about.html:54
 msgid "what drives us"
 msgstr ""
 
-#: about/templates/about/about.html:72
+#: about/templates/about/about.html:55
 msgid "our assessement methods"
 msgstr ""
 
-#: about/templates/about/about.html:73
+#: about/templates/about/about.html:56
 msgid "our spiderweb design"
 msgstr ""
 
-#: about/templates/about/about.html:74
+#: about/templates/about/about.html:57
 msgid "our personnalized service"
 msgstr ""
 
-#: about/templates/about/about.html:90
+#: about/templates/about/about.html:73
 msgid "Key Events"
 msgstr ""
 
-#: about/templates/about/about.html:102
+#: about/templates/about/about.html:85
 msgid "The Beginning"
 msgstr ""
 
-#: about/templates/about/about.html:103
+#: about/templates/about/about.html:86
 msgid "January 2015"
 msgstr ""
 
-#: about/templates/about/about.html:109
+#: about/templates/about/about.html:92
 msgid ""
 "BuyAware first came up at the Swiss Talent Forum, a think tank organized by "
 "Swiss Youth in Science. One group had the task of finding a new policy "
@@ -100,33 +68,33 @@ msgid ""
 "application. They chose to name the idea BuyAware."
 msgstr ""
 
-#: about/templates/about/about.html:112 about/templates/about/about.html:128
-#: about/templates/about/about.html:148 about/templates/about/about.html:168
-#: about/templates/about/about.html:188 about/templates/about/about.html:208
-#: about/templates/about/about.html:265 about/templates/about/about.html:291
-#: about/templates/about/about.html:317 about/templates/about/about.html:343
-#: about/templates/about/about.html:370
+#: about/templates/about/about.html:95 about/templates/about/about.html:111
+#: about/templates/about/about.html:131 about/templates/about/about.html:151
+#: about/templates/about/about.html:171 about/templates/about/about.html:191
+#: about/templates/about/about.html:248 about/templates/about/about.html:274
+#: about/templates/about/about.html:300 about/templates/about/about.html:326
+#: about/templates/about/about.html:353
 msgid "More"
 msgstr ""
 
-#: about/templates/about/about.html:113 about/templates/about/about.html:129
-#: about/templates/about/about.html:149 about/templates/about/about.html:169
-#: about/templates/about/about.html:189 about/templates/about/about.html:209
-#: about/templates/about/about.html:266 about/templates/about/about.html:292
-#: about/templates/about/about.html:318 about/templates/about/about.html:344
-#: about/templates/about/about.html:371
+#: about/templates/about/about.html:96 about/templates/about/about.html:112
+#: about/templates/about/about.html:132 about/templates/about/about.html:152
+#: about/templates/about/about.html:172 about/templates/about/about.html:192
+#: about/templates/about/about.html:249 about/templates/about/about.html:275
+#: about/templates/about/about.html:301 about/templates/about/about.html:327
+#: about/templates/about/about.html:354
 msgid "Hide"
 msgstr ""
 
-#: about/templates/about/about.html:121
+#: about/templates/about/about.html:104
 msgid "Early Development"
 msgstr ""
 
-#: about/templates/about/about.html:122
+#: about/templates/about/about.html:105
 msgid "April 2015"
 msgstr ""
 
-#: about/templates/about/about.html:125
+#: about/templates/about/about.html:108
 msgid ""
 "After the Swiss Talent Forum 2015 it was offered that some projects could be "
 "pursued beyond the event, if enough people were interested. BuyAware was one "
@@ -135,15 +103,15 @@ msgid ""
 "adapting BuyAware in a sense that it could become feasible."
 msgstr ""
 
-#: about/templates/about/about.html:137
+#: about/templates/about/about.html:120
 msgid "Survey"
 msgstr ""
 
-#: about/templates/about/about.html:138
+#: about/templates/about/about.html:121
 msgid "Autumn 2015"
 msgstr ""
 
-#: about/templates/about/about.html:145
+#: about/templates/about/about.html:128
 msgid ""
 "In order to get a better view of what other people thought about BuyAware, "
 "its potential and in what sector BuyAware should be tested, an online survey "
@@ -151,45 +119,45 @@ msgid ""
 "to start focusing our project on electronics."
 msgstr ""
 
-#: about/templates/about/about.html:157
+#: about/templates/about/about.html:140
 msgid "STF 2016"
 msgstr ""
 
-#: about/templates/about/about.html:158
+#: about/templates/about/about.html:141
 msgid "January 2016"
 msgstr ""
 
-#: about/templates/about/about.html:165
+#: about/templates/about/about.html:148
 msgid ""
 "Swiss Youth in Science gave us the oportunity to present our project at the "
 "Swiss Talent Forum 2016 and organise a workshop at the event. This gave us "
 "some valuable feedback on how we should continue with our project."
 msgstr ""
 
-#: about/templates/about/about.html:177
+#: about/templates/about/about.html:160
 msgid "GenerActions"
 msgstr ""
 
-#: about/templates/about/about.html:178
+#: about/templates/about/about.html:161
 msgid "April 2016"
 msgstr ""
 
-#: about/templates/about/about.html:185
+#: about/templates/about/about.html:168
 msgid ""
 "To get more feedback also from other age groups (our online survey had "
 "mostly been spread among peers), we attended the GenerActions event "
 "organised by Infoklick Zentralschweiz."
 msgstr ""
 
-#: about/templates/about/about.html:197
+#: about/templates/about/about.html:180
 msgid "LUGA"
 msgstr ""
 
-#: about/templates/about/about.html:198
+#: about/templates/about/about.html:181
 msgid "May 2016"
 msgstr ""
 
-#: about/templates/about/about.html:205
+#: about/templates/about/about.html:188
 msgid ""
 "On May 8th we had the opportunity to attend the LUGA fair in Lucerne. There "
 "we were able to present our project to the general public for the first "
@@ -198,25 +166,25 @@ msgid ""
 "event was definitely a good moral boost for the whole team!"
 msgstr ""
 
-#: about/templates/about/about.html:217
+#: about/templates/about/about.html:200
 msgid "In Development"
 msgstr ""
 
-#: about/templates/about/about.html:218
+#: about/templates/about/about.html:201
 msgid "Summer 2016"
 msgstr ""
 
-#: about/templates/about/about.html:224
+#: about/templates/about/about.html:207
 msgid ""
 "It is our goal to have a running prototype of our Database before the end of "
 "this summer. Stay tuned by liking our facebook page !!"
 msgstr ""
 
-#: about/templates/about/about.html:241
+#: about/templates/about/about.html:224
 msgid "Meet the team"
 msgstr ""
 
-#: about/templates/about/about.html:253
+#: about/templates/about/about.html:236
 msgid ""
 "\n"
 "\t    <p>\n"
@@ -240,7 +208,7 @@ msgid ""
 "\t    "
 msgstr ""
 
-#: about/templates/about/about.html:279
+#: about/templates/about/about.html:262
 msgid ""
 "\n"
 "\t      <p>\n"
@@ -259,7 +227,7 @@ msgid ""
 "\t      "
 msgstr ""
 
-#: about/templates/about/about.html:305
+#: about/templates/about/about.html:288
 msgid ""
 "\n"
 "\t    <p>\n"
@@ -284,7 +252,7 @@ msgid ""
 "\t    "
 msgstr ""
 
-#: about/templates/about/about.html:330
+#: about/templates/about/about.html:313
 msgid ""
 "\n"
 "\t      <p>\n"
@@ -308,7 +276,7 @@ msgid ""
 "\t      "
 msgstr ""
 
-#: about/templates/about/about.html:358
+#: about/templates/about/about.html:341
 msgid ""
 "\n"
 "\t    <p>\n"
@@ -440,11 +408,11 @@ msgid ""
 "</p>\n"
 msgstr ""
 
-#: about/templates/about/about_personal_service.html:11
+#: about/templates/about/about_personal_service.html:13
 msgid "Personalized service"
 msgstr ""
 
-#: about/templates/about/about_personal_service.html:18
+#: about/templates/about/about_personal_service.html:24
 #, python-format
 msgid ""
 "\n"
@@ -469,11 +437,11 @@ msgid ""
 "<img src=\"%(img_url)s\" class=\"img-details\"></img> \n"
 msgstr ""
 
-#: about/templates/about/about_spiderweb.html:10
+#: about/templates/about/about_spiderweb.html:12
 msgid "Spiderweb design"
 msgstr ""
 
-#: about/templates/about/about_spiderweb.html:18
+#: about/templates/about/about_spiderweb.html:26
 #, python-format
 msgid ""
 "\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 16:03+0000\n"
+"POT-Creation-Date: 2016-08-05 15:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,61 +17,97 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: home/templates/home/home.html:21 home/templates/home/home_page.html:23
+#: templates/home/home.html:21 templates/home/home_page.html:23
 msgid "Let's get started..."
 msgstr ""
 
-#: home/templates/home/home.html:37 home/templates/home/home_page.html:111
+#: templates/home/home.html:37
+msgid "What's BuyAware?"
+msgstr ""
+
+#: templates/home/home.html:43
+msgid ""
+"\n"
+"\t<p>\n"
+"\t  We are a group of young students from different regions of Switzerland "
+"who met at the Swiss Talent Forum in 2015. It was here that we initiated the "
+"BuyAware project, and have been developing the idea ever since.\n"
+"\t</p>\n"
+"\t<p>\n"
+"\t  It is our goal to inform consumers about the ecological and ethical "
+"background of different products in the electronics sector, so that the "
+"consumers can make a more responsible purchase decision. In order to do so "
+"we assess the devices according to six categories: climate and energy, "
+"ecology, worker rights, conflict minerals, transparency of the company and "
+"performance. The results of these assessments are then merged to form the "
+"product profile which our users can access over our database and use for "
+"comparison purposes. It is important to us that we present our assessments "
+"in an all-in-one format so that our customers can immediately see where a "
+"product has its strengths and weaknesses. Additionally, we understand that "
+"different people have different needs, which is why the weightings of our "
+"six assessed categories can be adjusted individually, so that we are able to "
+"give the most helpful feedback possible.\n"
+"\t</p>\n"
+"\t<p>\n"
+"\t  At the moment, we focus our activities only on smartphones. In the long "
+"run however, we are planning on expanding our service to cover all products "
+"in the electronics sector.\n"
+"\t</p>\n"
+"\t"
+msgstr ""
+
+#: templates/home/home.html:59
+msgid "Find out more"
+msgstr ""
+
+#: templates/home/home.html:72 templates/home/home_page.html:111
 msgid "Contact Us"
 msgstr ""
 
-#: home/templates/home/home.html:48 home/templates/home/home.html.py:49
-#: home/templates/home/home_page.html:122
-#: home/templates/home/home_page.html:123
+#: templates/home/home.html:83 templates/home/home.html.py:84
+#: templates/home/home_page.html:122 templates/home/home_page.html.py:123
 msgid "Name"
 msgstr ""
 
-#: home/templates/home/home.html:49 home/templates/home/home_page.html:123
+#: templates/home/home.html:84 templates/home/home_page.html:123
 msgid "Please enter your name."
 msgstr ""
 
-#: home/templates/home/home.html:55 home/templates/home/home.html.py:56
-#: home/templates/home/home_page.html:129
-#: home/templates/home/home_page.html:130
+#: templates/home/home.html:90 templates/home/home.html.py:91
+#: templates/home/home_page.html:129 templates/home/home_page.html.py:130
 msgid "Email Address"
 msgstr ""
 
-#: home/templates/home/home.html:56 home/templates/home/home_page.html:130
+#: templates/home/home.html:91 templates/home/home_page.html:130
 msgid "Please enter your email address."
 msgstr ""
 
-#: home/templates/home/home.html:62 home/templates/home/home_page.html:136
+#: templates/home/home.html:97 templates/home/home_page.html:136
 msgid "Phone Number"
 msgstr ""
 
-#: home/templates/home/home.html:63 home/templates/home/home_page.html:137
+#: templates/home/home.html:98 templates/home/home_page.html:137
 msgid "Phone Number (optional)"
 msgstr ""
 
-#: home/templates/home/home.html:69 home/templates/home/home.html.py:70
-#: home/templates/home/home_page.html:143
-#: home/templates/home/home_page.html:144
+#: templates/home/home.html:104 templates/home/home.html.py:105
+#: templates/home/home_page.html:143 templates/home/home_page.html.py:144
 msgid "Message"
 msgstr ""
 
-#: home/templates/home/home.html:70 home/templates/home/home_page.html:144
+#: templates/home/home.html:105 templates/home/home_page.html:144
 msgid "Please enter a message."
 msgstr ""
 
-#: home/templates/home/home.html:78 home/templates/home/home_page.html:152
+#: templates/home/home.html:113 templates/home/home_page.html:152
 msgid "Send"
 msgstr ""
 
-#: home/templates/home/home_page.html:39
+#: templates/home/home_page.html:39
 msgid "About"
 msgstr ""
 
-#: home/templates/home/home_page.html:45
+#: templates/home/home_page.html:45
 msgid ""
 "We are a group of students from several Swiss universities who have met at "
 "the Swiss Talent Forum 2015 in Thun, Switzerland, which is a think-tank "
@@ -80,7 +116,7 @@ msgid ""
 "BuyAware."
 msgstr ""
 
-#: home/templates/home/home_page.html:48
+#: templates/home/home_page.html:48
 msgid ""
 "The objective of BuyAware is to contribute to more responsible consumption "
 "by closing information gaps in the field of electronics. By providing "
@@ -88,6 +124,6 @@ msgid ""
 "more conscious, individual and reflected buying decision."
 msgstr ""
 
-#: home/templates/home/home_page.html:60
+#: templates/home/home_page.html:60
 msgid "Meet the team"
 msgstr ""

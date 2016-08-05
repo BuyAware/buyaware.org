@@ -7,7 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 16:03+0000\n"
+"POT-Creation-Date: 2016-08-04 11:04+0000\n"
+"PO-Revision-Date: 2016-06-27 22:27+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "PO-Revision-Date: 2016-06-27 22:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,10 +28,6 @@ msgstr "Anglais"
 #: buyaware/settings.py:147
 msgid "Deutsch"
 msgstr "Allemand"
-
-#: buyaware/settings.py:148
-msgid "Francais"
-msgstr "Francais"
 
 #: buyaware/templates/base.html:66
 msgid "Blog"
@@ -49,3 +48,6 @@ msgstr "Suisse"
 #: buyaware/templates/base.html:111
 msgid "Around the Web"
 msgstr "Viens nous visiter sur"
+
+#~ msgid "Francais"
+#~ msgstr "Francais"
