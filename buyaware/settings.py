@@ -78,6 +78,7 @@ INSTALLED_APPS = (
     'home.apps.HomeConfig',
     'blog',
     'about',
+    'db',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',

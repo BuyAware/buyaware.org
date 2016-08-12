@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-04 11:04+0000\n"
+"POT-Creation-Date: 2016-08-05 18:14+0000\n"
 "PO-Revision-Date: 2016-06-27 22:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,7 +23,7 @@ msgid "Let's get started..."
 msgstr "Commence tout de suite"
 
 #: home/templates/home/home.html:37
-msgid "What's BuyAware?"
+msgid "What is BuyAware?"
 msgstr ""
 
 #: home/templates/home/home.html:43
