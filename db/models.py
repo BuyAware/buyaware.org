@@ -66,6 +66,25 @@ class Product (models.Model):
     def __unicode__(self):
         return self.name
 
+        
+    def save(self, *args, **kwargs):        
+        
+        super(Product, self).save(*args, **kwargs)
+        
+        # get all criteria that need an answer in order to create the rating
+        criteriaToAnswer = Criterion.objects.filter(rating=self.rating)
+        # iterate over all criterias and check if the answer exists in database
+        for crit in criteriaToAnswer:
+            # if it doesn't exist, create an answer
+            if not CriterionAnswer.objects.filter(criterion=crit).filter(product=self):
+                print "Criteria answer to: <%s> does not exist... creating new one" % crit.__str__()
+                new_criterionAnswer = CriterionAnswer()
+                new_criterionAnswer.criterion = crit
+                new_criterionAnswer.product = self
+                new_criterionAnswer.save()
+            else:
+                print "Criteria answer to: <%s> exists." % crit.__str__()
+                
 
 class Rating(models.Model):
     """
