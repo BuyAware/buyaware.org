@@ -13,6 +13,7 @@ from forms import *
 
 class CriterionAnswerInline(admin.TabularInline):
     model = CriterionAnswer
+    formset = CriterionAnswerFormSet 
 
     # criterion answers can't be added, these are defined by the product
     # and selected rating
@@ -24,6 +25,11 @@ class CriterionInRatingInline(admin.TabularInline):
     model = CriterionInRating
     formset = CriterionInRatingFormSet
 
+
+class GlobalProductRatingInline(admin.TabularInline):
+    model = GlobalProductRating
+
+
 # --------------------
 # Model admins
 # --------------------
@@ -31,10 +37,6 @@ class CriterionInRatingInline(admin.TabularInline):
 
 class BrandAdmin(admin.ModelAdmin):
     pass
-
-
-class GlobalProductRatingInline(admin.TabularInline):
-    model = GlobalProductRating
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -51,12 +53,6 @@ class ProductAdmin(admin.ModelAdmin):
     ]
 
     # TODO: hide criterions that do not belong to the selected rating
-    def get_fieldsets(self, request, obj=None):
-        fieldsets = super(ProductAdmin, self).get_fieldsets(request, obj)
-
-        print(fieldsets)
-
-        return fieldsets
 
 
 
@@ -92,7 +88,7 @@ class CriterionAnswerAdmin(admin.ModelAdmin):
         # get_fields is called multiple times so we have to make sure the
         # fields aren't added many times and that there are always the
         # following fields
-        fields = ['criterion', 'product']
+        fields = ['criterion', 'product', 'rating']
 
         # the diyplay of the model instance depends on it's type...
         criterion_type = obj.criterion.crit_type

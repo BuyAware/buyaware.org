@@ -2,6 +2,12 @@ from django.db import models
 # validators
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+# ------------------
+# Global Constants
+# ------------------
+
+DEFAULT_RATING_ID = 1
+
 
 class Brand (models.Model):
     """
@@ -81,6 +87,7 @@ class Product (models.Model):
                 new_criterionAnswer = CriterionAnswer()
                 new_criterionAnswer.criterion = crit
                 new_criterionAnswer.product = self
+                new_criterionAnswer.rating = self.rating
                 new_criterionAnswer.save()
             else:
                 print "Criteria answer to: <%s> exists." % crit.__str__()
@@ -91,25 +98,26 @@ class GlobalProductRating(models.Model):
     Temporary rating. no calculations involved
     '''
     product = models.OneToOneField(
-        'Product', 
+        'Product',
         on_delete=models.CASCADE,
     )
-    
-    overall = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Overall rating')
+
+    overall = models.IntegerField(validators=[MaxValueValidator(
+        100), MinValueValidator(0)], verbose_name='Overall rating')
     CE = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Climate/Energy')
     EC = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Ecology')
     WR = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Worker Rights')
-    CM = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Conflict Materials')
+    CM = models.IntegerField(validators=[MaxValueValidator(
+        100), MinValueValidator(0)], verbose_name='Conflict Materials')
     TR = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Transparancy')
     PR = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Performance')
+
+    def __unicode_(self):
+        return "rating of " + product.name
 
     class Meta:
         verbose_name = "Global Product Rating"
         verbose_name_plural = "Global Product Ratings"
-
-    def __unicode_(self):
-        return "rating of " + product.name 
-    
 
 
 class Rating(models.Model):
@@ -127,6 +135,9 @@ class Rating(models.Model):
     # --------------------
     # methods
     # --------------------
+
+    def get_default_rating(self):
+        return Rating()
 
     def __unicode__(self):
         return self.name
@@ -202,7 +213,7 @@ class Criterion(models.Model):
 
 class CriterionInRating(models.Model):
     '''
-    Many to many intermediate model, adds a weighting to the criterion in 
+    Many to many intermediate model, adds a weighting to the criterion in
     the specfic rating.
     '''
 
@@ -272,6 +283,7 @@ class CriterionAnswer(models.Model):
 
     criterion = models.ForeignKey('Criterion', on_delete=models.CASCADE)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    rating = models.ForeignKey('Rating', on_delete=models.CASCADE, default=DEFAULT_RATING_ID)
 
     # --------------------
     # methods
