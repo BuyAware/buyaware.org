@@ -2,10 +2,11 @@ from django.db import models
 # validators
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+
 class Brand (models.Model):
     """
     Stores information on brands.
-    
+
     *** Relations ***
     one :model:'db.Brand' may have many :model:'db.Product'
     """
@@ -32,7 +33,7 @@ class Product (models.Model):
     many :model:'db.Product' can have a same :model:'db.Brand'
     many :model:'db.Product' can have a same :model:'db.Rating'
     """
-    
+
     # --------------------
     # fields
     # --------------------
@@ -45,7 +46,7 @@ class Product (models.Model):
     # --------------------
     # relations
     # --------------------
-    
+
     brand = models.ForeignKey(
         'Brand',
         on_delete=models.CASCADE,
@@ -66,11 +67,10 @@ class Product (models.Model):
     def __unicode__(self):
         return self.name
 
-        
-    def save(self, *args, **kwargs):        
-        
+    def save(self, *args, **kwargs):
+
         super(Product, self).save(*args, **kwargs)
-        
+
         # get all criteria that need an answer in order to create the rating
         criteriaToAnswer = Criterion.objects.filter(rating=self.rating)
         # iterate over all criterias and check if the answer exists in database
@@ -84,7 +84,33 @@ class Product (models.Model):
                 new_criterionAnswer.save()
             else:
                 print "Criteria answer to: <%s> exists." % crit.__str__()
-                
+
+
+class GlobalProductRating(models.Model):
+    '''
+    Temporary rating. no calculations involved
+    '''
+    product = models.OneToOneField(
+        'Product', 
+        on_delete=models.CASCADE,
+    )
+    
+    overall = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Overall rating')
+    CE = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Climate/Energy')
+    EC = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Ecology')
+    WR = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Worker Rights')
+    CM = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Conflict Materials')
+    TR = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Transparancy')
+    PR = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], verbose_name='Performance')
+
+    class Meta:
+        verbose_name = "Global Product Rating"
+        verbose_name_plural = "Global Product Ratings"
+
+    def __unicode_(self):
+        return "rating of " + product.name 
+    
+
 
 class Rating(models.Model):
     """
@@ -103,13 +129,13 @@ class Rating(models.Model):
     # --------------------
 
     def __unicode__(self):
-        return self.name    
+        return self.name
 
 
 class Category(models.Model):
     """
     Category of a criterion
-    
+
     *** Relations ***
     one :model:'db.Category' has many :model:'db.Criterion'.
     """
@@ -147,13 +173,13 @@ class Criterion(models.Model):
     date_added = models.DateField()
     crit_type = models.CharField(max_length=2, choices=CRIT_TYPES)
     is_brand_specific = models.BooleanField()
-    best_grade = models.IntegerField(default = 0, help_text = "Only for xx and xy criterion types.")
-    worst_grade = models.IntegerField(default = 0, help_text = "Only for xx and xy criterion types.")
+    best_grade = models.IntegerField(default=0, help_text="Only for xx and xy criterion types.")
+    worst_grade = models.IntegerField(default=0, help_text="Only for xx and xy criterion types.")
 
     # --------------------
     # relations
     # --------------------
-    
+
     category = models.ForeignKey(
         'Category',
         on_delete=models.PROTECT,
@@ -173,22 +199,23 @@ class Criterion(models.Model):
     def __unicode__(self):
         return self.question
 
+
 class CriterionInRating(models.Model):
     '''
     Many to many intermediate model, adds a weighting to the criterion in 
     the specfic rating.
     '''
 
-    criterion = models.ForeignKey('Criterion', 
+    criterion = models.ForeignKey('Criterion',
                                   on_delete=models.CASCADE,
-                                  default = None,
-                              )
-    rating = models.ForeignKey('Rating', 
+                                  default=None,
+                                  )
+    rating = models.ForeignKey('Rating',
                                on_delete=models.CASCADE,
-                               default = None,
-                           )
+                               default=None,
+                               )
     weight = models.IntegerField(
-        default = 0, 
+        default=0,
         validators=[
             MaxValueValidator(100),
             MinValueValidator(0)
@@ -201,13 +228,13 @@ class CriterionInRating(models.Model):
     def __unicode__(self):
         return "criterion " + str(self.criterion.id) + " in " + self.rating.name
 
-    
     # --------------------
     # Meta
     # --------------------
 
     class Meta:
         unique_together = ('criterion', 'rating')
+
 
 class CriterionAnswer(models.Model):
     '''
@@ -217,27 +244,27 @@ class CriterionAnswer(models.Model):
     A :model:'db.Product' has many :model:'db.CriterionAnswer'
     A :model:'db.Criterion' has many :model:'db.CriterionAnswer'
     '''
-    
+
     # --------------------
     # fields
     # --------------------
 
     answer_bool = models.BooleanField(default=False,
-                                  )
-    answer_xx   = models.IntegerField(default= 0, 
-                                      validators=[
-                                          MaxValueValidator(100),
-                                          MinValueValidator(0)
-                                      ],
-                                      null = True,
-                                  )
-    answer_xy   = models.IntegerField(default=0, 
-                                      validators=[
-                                          MaxValueValidator(100),
-                                          MinValueValidator(0)
-                                      ],
-                                      null = True,
-                                  )
+                                      )
+    answer_xx = models.IntegerField(default=0,
+                                    validators=[
+                                        MaxValueValidator(100),
+                                        MinValueValidator(0)
+                                    ],
+                                    null=True,
+                                    )
+    answer_xy = models.IntegerField(default=0,
+                                    validators=[
+                                        MaxValueValidator(100),
+                                        MinValueValidator(0)
+                                    ],
+                                    null=True,
+                                    )
 
     # --------------------
     # relations

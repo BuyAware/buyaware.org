@@ -1,0 +1,94 @@
+.product-container {
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);  
+  background-color: white;
+}
+
+.row.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.product-detail-chart {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 6px 0px 5px -5px #999;
+    z-index: 2;
+}
+
+.product-details {
+    padding: 20px 50px 20px 50px;
+    color: #333;
+    background-color: GhostWhite;
+}
+
+.product-name h3 {
+    margin-top: 20px;
+}
+
+.tab-pane h3 {
+  margin-top: 0;
+}
+
+.badge {
+  background-color: #777;
+}
+
+.tabs-left {
+  margin-top: 2rem;
+}
+
+.nav-tabs {
+  float: left;
+  border-bottom: 0;
+}
+.nav-tabs li {
+  float: none;
+  margin: 0;
+
+}
+.nav-tabs li a {
+  margin-right: 0;
+  border: 0;
+  background-color: #333;
+  border-radius: 0 !important;
+}
+.nav-tabs li a:hover {
+  background-color: #444;
+}
+.nav-tabs .glyphicon {
+  color: #fff;
+}
+.nav-tabs .active .glyphicon {
+  color: #333;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+}
+
+.tab-content {
+  padding-left: 45px;
+}
+.tab-content .tab-pane {
+  display: none;
+  background-color: rgba(179,181,198,1);
+  padding: 1.6rem;
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.tab-content .active {
+  display: block;
+}
+
+.list-group {
+  width: 100%;
+}
+.list-group .list-group-item {
+  height: 50px;
+}
+.list-group .list-group-item h4, .list-group .list-group-item span {
+  line-height: 11px;
+}

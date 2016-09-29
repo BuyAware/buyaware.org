@@ -19,5 +19,8 @@ mydatabase
 # ignore compiled translation files
 *.mo
 
-# ignore photologue media
-./buyaware/media/photologue/*
+# ignore media
+./buyaware/media/*
+
+#ignore sublime-text workspace file
+*.sublime-workspace

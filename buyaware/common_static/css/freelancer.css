@@ -85,6 +85,11 @@ header {
     background: #62bd68;
 }
 
+header.other {
+    background-color: white;
+    padding-top: 70px;
+}
+
 header .container {
     padding-top: 50px;
     padding-bottom: 50px;

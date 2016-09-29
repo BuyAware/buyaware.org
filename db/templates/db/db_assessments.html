@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+BuyAware - Assessments
+{% endblock %}
+
+{% block styling %}
+<link rel="stylesheet" type="text/css" href={% static "db/css/db_assessments.css" %}>
+{% endblock %}
+
+
+{% block content %}
+<header class="other">
+</header>
+
+<section class="success">
+    <div class="container">
+        <div class="row">
+
+        {# iterate over all products. #}
+
+        {% for product in object_list %}
+
+        {% with product.globalproductrating as rating %}
+
+        <div class="col-md-4 box">
+            <div class="product-container">
+                <a href=" {% url "db:assessments_detail" product.pk %} ">
+                <div class="product-img">
+                    <img class=" darkable" src="{{ product.img.url }}">
+                    <canvas id="Chart{{forloop.counter}}" width="300" height="300" CE="{{rating.CE}}" EC="{{rating.EC}}" WR="{{rating.WR}}" CM="{{rating.CM}}" TR="{{rating.TR}}" PR="{{rating.PR}}"></canvas>
+                </div>
+                </a>
+                <div class="product-text">
+                    <h5> {{product.name}} </h5>
+                </div>
+            </div>  
+        </div>
+
+       {% if forloop.counter|divisibleby:"3" %} {# if end of row is reached... #}
+        </div>                                  {# ... close row and ...#}
+            {% if forloop.last == False %}      {# ... check if it's not the last product before closing it.#}
+        <div class="row">
+            {% endif %}
+        {% else %}                              {# if it is infact the last product but not the end of the row, close the row.#}
+            {% if forloop.last %}
+        </div>
+            {% endif %}
+        {% endif %}
+
+        {% endwith %}
+
+        {% empty %}
+        <p>No products yet.</p>
+        {% endfor %}
+    </div>    
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/Chart.js" %}"></script>
+<script src="{% static "db/js/assessments.js" %}"></script>
+{% endblock %}

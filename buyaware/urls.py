@@ -30,6 +30,7 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += i18n_patterns(
     url('^about/', include('about.urls', namespace='about')),
     url('^blog/', include('blog.urls', namespace='blog')),
+    url('^db/', include('db.urls', namespace='db')),
     url('^admin/', include(admin.site.urls)),
     url('^', include('home.urls', namespace='home')),
 )

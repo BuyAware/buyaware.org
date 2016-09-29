@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+BuyAware - Product Details
+{% endblock %}
+
+{% block styling %}
+<link rel="stylesheet" type="text/css" href={% static "db/css/db_assessments_detail.css" %}>
+{% endblock %}
+
+
+{% block content %}
+<header class="other">
+</header>
+
+<section class="success">
+    <div class="container">
+        <div class="row row-eq-height product-container ">
+          {% with object.globalproductrating as rating %}
+            <div class="col-md-4 product-detail-chart">
+                <canvas id="Chart" width="300" height="300" CE="{{rating.CE}}" EC="{{rating.EC}}" WR="{{rating.WR}}" CM="{{rating.CM}}" TR="{{rating.TR}}" PR="{{rating.PR}}"></canvas>
+            </div>
+            <div class="col-md-8 product-details">
+                {# <div class="product-details"> #}
+        <div class="product-name">
+        <h3>{{object.name}}</h3>
+        </div>
+        <div class="product-assessments">
+        <div class="tabs-left">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#a" data-toggle="tab"><span class="glyphicon glyphicon-stats"></span></a></li>
+          <li><a href="#b" data-toggle="tab"><span class="glyphicon glyphicon-leaf"></span></a></li>
+          <li><a href="#c" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span></a></li>
+          <li><a href="#d" data-toggle="tab"><span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a href="#e" data-toggle="tab"><span class="glyphicon glyphicon-fire"></span></a></li>
+          <li><a href="#f" data-toggle="tab"><span class="glyphicon glyphicon-eye-open"></span></a></li>
+          <li><a href="#g" data-toggle="tab"><span class="glyphicon glyphicon-wrench"></span></a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="a">
+            <h3>Overall rating &nbsp; &nbsp;<span id="overall" class="badge pull-right">{{rating.overall}}%</span></h3>
+            <ul class="list-group pull-left">
+              <li class="list-group-item">
+                <h4>Climate/Energy &nbsp; &nbsp;<span class="badge pull-right">{{rating.CE}}%</span></h4>
+              </li>
+              <li class="list-group-item">
+                <h4>Ecology &nbsp; &nbsp;<span class="badge pull-right">{{rating.EC}}%</span></h4>
+              </li>
+              <li class="list-group-item">
+                <h4>Worker Rights &nbsp; &nbsp;<span class="badge pull-right">{{rating.WR}}%</span></h4>
+              </li>
+              <li class="list-group-item">
+                <h4>Conflict Minerals &nbsp; &nbsp;<span class="badge pull-right">{{rating.CM}}%</span></h4>
+              </li>
+              <li class="list-group-item">
+                <h4>Transparency &nbsp; &nbsp;<span class="badge pull-right">{{rating.TR}}%</span></h4>
+              </li>
+              <li class="list-group-item">
+                <h4>Performance &nbsp; &nbsp;<span class="badge pull-right">{{rating.PR}}%</span></h4>
+              </li>
+            </ul>
+            
+          </div>
+          <div class="tab-pane" id="b">
+                <h3>Climate/Energy</h3>
+          </div>
+          <div class="tab-pane" id="c">
+                <h3>Ecology</h3>
+          </div>
+          <div class="tab-pane" id="d">
+                <h3>Worker Rights</h3>
+          </div>
+          <div class="tab-pane" id="e">
+                <h3>Conflict Minerals</h3>
+          </div>
+          <div class="tab-pane" id="f">
+                <h3>Transparency</h3>
+          </div>
+          <div class="tab-pane" id="g">
+                <h3>Performance</h3>
+          </div>
+        </div><!-- /tab-content -->
+      </div><!-- /tabbable -->
+    </div>
+    <p class="product-description">
+                    
+    </p>
+    {% endwith %}
+                </div>
+            </div>
+        {# <div > #}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/Chart.js" %}"></script>
+<script type="text/javascript">
+$(function(){
+
+    // Make chart
+    var canvas = $("canvas");
+     var data = {
+            labels: ["CE", "EC", "WR", "CM", "TR", "PR"],
+            datasets: [
+                {
+                    label: "Phone Rating",
+                    backgroundColor: "rgba(179,181,198,0.2)",
+                    borderColor: "rgba(179,181,198,1)",
+                    pointBackgroundColor: "rgba(179,181,198,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(179,181,198,1)",
+                    data: [
+                        parseInt(canvas.attr("CE")),
+                        parseInt(canvas.attr("EC")),
+                        parseInt(canvas.attr("WR")),
+                        parseInt(canvas.attr("CM")),
+                        parseInt(canvas.attr("TR")),
+                        parseInt(canvas.attr("PR")),
+                        ]
+                },
+            ]
+        };
+        var Chart1 = new Chart(canvas, {
+            type: 'radar',
+            data: data,
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 100,
+                        stepSize: 20,
+                    }
+                }
+            }
+        });   
+});
+
+</script>
+{% endblock %}

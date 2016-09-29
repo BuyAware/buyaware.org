@@ -6,22 +6,36 @@ from django.contrib.admin.util import flatten_fieldsets
 from django import forms
 from forms import *
 
-
 # --------------------
-# Model admins
+# Inlines
 # --------------------
-
-class BrandAdmin(admin.ModelAdmin):
-    pass
 
 
 class CriterionAnswerInline(admin.TabularInline):
     model = CriterionAnswer
 
-    # criterion answers can't be added, these are defined by the product 
+    # criterion answers can't be added, these are defined by the product
     # and selected rating
     def has_add_permission(self, request):
         return False
+
+
+class CriterionInRatingInline(admin.TabularInline):
+    model = CriterionInRating
+    formset = CriterionInRatingFormSet
+
+# --------------------
+# Model admins
+# --------------------
+
+
+class BrandAdmin(admin.ModelAdmin):
+    pass
+
+
+class GlobalProductRatingInline(admin.TabularInline):
+    model = GlobalProductRating
+
 
 class ProductAdmin(admin.ModelAdmin):
     '''
@@ -32,21 +46,19 @@ class ProductAdmin(admin.ModelAdmin):
     '''
 
     inlines = [
+        GlobalProductRatingInline,
         CriterionAnswerInline,
     ]
-           
+
     # TODO: hide criterions that do not belong to the selected rating
-    def get_fieldsets(self, request, obj = None):
+    def get_fieldsets(self, request, obj=None):
         fieldsets = super(ProductAdmin, self).get_fieldsets(request, obj)
-        
+
         print(fieldsets)
 
         return fieldsets
 
 
-class CriterionInRatingInline(admin.TabularInline):
-    model = CriterionInRating
-    formset = CriterionInRatingFormSet            
 
 class RatingAdmin(admin.ModelAdmin):
     inlines = [
@@ -69,7 +81,7 @@ class CriterionAdmin(admin.ModelAdmin):
 class CriterionAnswerAdmin(admin.ModelAdmin):
     '''
     Admin for Criterion Answer model.
-    
+
     The form takes care of showing only the field that corresponds to 
     the related criterion's type.
     '''
@@ -81,7 +93,7 @@ class CriterionAnswerAdmin(admin.ModelAdmin):
         # fields aren't added many times and that there are always the
         # following fields
         fields = ['criterion', 'product']
-        
+
         # the diyplay of the model instance depends on it's type...
         criterion_type = obj.criterion.crit_type
 
@@ -94,19 +106,16 @@ class CriterionAnswerAdmin(admin.ModelAdmin):
 
         return fields
 
-
     def get_readonly_fields(self, request, obj=None):
         return list(self.readonly_fields) + \
-               [field.name for field in obj._meta.fields]
-
+            [field.name for field in obj._meta.fields]
 
     def has_add_permission(self, request, obj=None):
         return False
 
-
     def has_delete_permission(self, request, obj=None):
         return False
-    
+
 
 class CategoryAdmin(admin.ModelAdmin):
     pass
@@ -122,3 +131,4 @@ admin.site.register(Rating, RatingAdmin)
 admin.site.register(Criterion, CriterionAdmin)
 admin.site.register(CriterionAnswer, CriterionAnswerAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(GlobalProductRating)
