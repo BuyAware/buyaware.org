@@ -290,4 +290,4 @@ class CriterionAnswer(models.Model):
     # --------------------
 
     def __unicode__(self):
-        return "Answer to criterion " + str(self.criterion.id) + " for " + self.product.name
+        return "Criterion answer " + str(self.criterion.id) + " to " + str(self.product)

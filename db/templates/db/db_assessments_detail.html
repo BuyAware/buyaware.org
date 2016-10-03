@@ -41,25 +41,25 @@ BuyAware - Product Details
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="a">
-            <h3>Overall rating &nbsp; &nbsp;<span id="overall" class="badge pull-right">{{rating.overall}}%</span></h3>
+            <h3>Overall rating &nbsp; &nbsp;<span id="overall" class="label label-default pull-right">{{rating.overall}}%</span></h3>
             <ul class="list-group pull-left">
               <li class="list-group-item">
-                <h4>Climate/Energy &nbsp; &nbsp;<span class="badge pull-right">{{rating.CE}}%</span></h4>
+                <h4>Climate/Energy &nbsp; &nbsp;<span class="label pull-right">{{rating.CE}}%</span></h4>
               </li>
               <li class="list-group-item">
-                <h4>Ecology &nbsp; &nbsp;<span class="badge pull-right">{{rating.EC}}%</span></h4>
+                <h4>Ecology &nbsp; &nbsp;<span class="label pull-right">{{rating.EC}}%</span></h4>
               </li>
               <li class="list-group-item">
-                <h4>Worker Rights &nbsp; &nbsp;<span class="badge pull-right">{{rating.WR}}%</span></h4>
+                <h4>Worker Rights &nbsp; &nbsp;<span class="label pull-right">{{rating.WR}}%</span></h4>
               </li>
               <li class="list-group-item">
-                <h4>Conflict Minerals &nbsp; &nbsp;<span class="badge pull-right">{{rating.CM}}%</span></h4>
+                <h4>Conflict Minerals &nbsp; &nbsp;<span class="label pull-right">{{rating.CM}}%</span></h4>
               </li>
               <li class="list-group-item">
-                <h4>Transparency &nbsp; &nbsp;<span class="badge pull-right">{{rating.TR}}%</span></h4>
+                <h4>Transparency &nbsp; &nbsp;<span class="label pull-right">{{rating.TR}}%</span></h4>
               </li>
               <li class="list-group-item">
-                <h4>Performance &nbsp; &nbsp;<span class="badge pull-right">{{rating.PR}}%</span></h4>
+                <h4>Performance &nbsp; &nbsp;<span class="label pull-right">{{rating.PR}}%</span></h4>
               </li>
             </ul>
             
@@ -102,15 +102,35 @@ BuyAware - Product Details
 <script type="text/javascript">
 $(function(){
 
+    // color badges
+
+    $(".label").each(function(args){
+        var rating_value = parseInt($(this).html());
+        if( rating_value >= 50){
+          if(rating_value >= 75){
+            $(this).css("backgroundColor", "green");
+          } else {
+            $(this).css("backgroundColor", "yellow");
+          }
+        }else{
+          if(rating_value >=25){
+            $(this).css("backgroundColor", "orange"); 
+          } else {
+            $(this).css("backgroundColor", "red"); 
+          }
+        }
+    });
+
     // Make chart
     var canvas = $("canvas");
+    var bg = $("#overall").css("backgroundColor").replace(/^rgba?\(|\s+|\)$/g,'').split(',');
      var data = {
             labels: ["CE", "EC", "WR", "CM", "TR", "PR"],
             datasets: [
                 {
                     label: "Phone Rating",
-                    backgroundColor: "rgba(179,181,198,0.2)",
-                    borderColor: "rgba(179,181,198,1)",
+                    backgroundColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 0.3)",
+                    borderColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 1)",
                     pointBackgroundColor: "rgba(179,181,198,1)",
                     pointBorderColor: "#fff",
                     pointHoverBackgroundColor: "#fff",
@@ -136,6 +156,9 @@ $(function(){
                         max: 100,
                         stepSize: 20,
                     }
+                },
+                legend:{
+                  display:false,
                 }
             }
         });   

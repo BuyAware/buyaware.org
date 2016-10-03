@@ -26,7 +26,7 @@ BuyAware - Assessments
 
         {% with product.globalproductrating as rating %}
 
-        <div class="col-md-4 box">
+        <div class="col-sm-4 box">
             <div class="product-container">
                 <a href=" {% url "db:assessments_detail" product.pk %} ">
                 <div class="product-img">
@@ -35,7 +35,7 @@ BuyAware - Assessments
                 </div>
                 </a>
                 <div class="product-text">
-                    <h5> {{product.name}} </h5>
+                    <h4 id="productName"> {{product.name}} <span class="label label-default pull-right">{{rating.overall}}%</span></h4>
                 </div>
             </div>  
         </div>

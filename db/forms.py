@@ -42,4 +42,5 @@ class CriterionAnswerFormSet(forms.BaseInlineFormSet):
 
     def __init__(self, *args, **kwargs):
         super(CriterionAnswerFormSet, self).__init__(*args, **kwargs)
-        self.queryset = CriterionAnswer.objects.all()
+        
+        #self.queryset = CriterionAnswer.objects.filter()

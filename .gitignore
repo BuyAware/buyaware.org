@@ -24,3 +24,6 @@ mydatabase
 
 #ignore sublime-text workspace file
 *.sublime-workspace
+
+# ignore .DS_Store
+*.DS_Store

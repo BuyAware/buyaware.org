@@ -6,6 +6,9 @@
         scale: {
             ticks: {
                 display: false,
+                beginAtZero: true,
+                max: 100,
+                stepSize: 20,
             }
         },
         legend: {
@@ -21,17 +24,41 @@
     $(function(){
 
     /*
+    ** Change color of rating label according to rating value
+    */
+    $(".label").each(function(args){
+        var rating_value = parseInt($(this).html());
+        if( rating_value >= 50){
+          if(rating_value >= 75){
+            $(this).css("backgroundColor", "green");
+          } else {
+            $(this).css("backgroundColor", "yellow");
+          }
+        }else{
+          if(rating_value >=25){
+            $(this).css("backgroundColor", "orange"); 
+          } else {
+            $(this).css("backgroundColor", "red"); 
+          }
+        }
+    });
+
+    /*
     ** Generate radar chart for each product
     */
 
     $(".product-img canvas").each(function (arg) {
+
+        // get color
+        var bg = $(this).parent().parent().siblings(".product-text").children("#productName").children(".label").css("backgroundColor").replace(/^rgba?\(|\s+|\)$/g,'').split(',');
+
         var data = {
             labels: ["", "", "", "", "", ""],
             datasets: [
                 {
-                    label: "My First dataset",
-                    backgroundColor: "rgba(179,181,198,0.2)",
-                    borderColor: "rgba(179,181,198,1)",
+                    label: "Phone Rating",
+                    backgroundColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 0.3)",
+                    borderColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 1)",
                     pointBackgroundColor: "rgba(179,181,198,1)",
                     pointBorderColor: "#fff",
                     pointHoverBackgroundColor: "#fff",
@@ -77,4 +104,13 @@
             });
         });
 
+    $(".product-img").click(
+        function (e) {
+            $(this).children("img").css({"opacity": "1"});
+            $(this).children("canvas").css({
+                "-ms-transform": "translateY( 0px)", /* IE 9 */
+                "-webkit-transform": "translateY(0px)", /* Chrome, Safari, Opera */
+                "transform": "translateY(0px)",
+            });
+    });
 });
