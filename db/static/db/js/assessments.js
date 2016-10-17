@@ -56,7 +56,7 @@
             labels: ["", "", "", "", "", ""],
             datasets: [
                 {
-                    label: "Phone Rating",
+                    label: $(this).attr("id"),
                     backgroundColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 0.3)",
                     borderColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 1)",
                     pointBackgroundColor: "rgba(179,181,198,1)",

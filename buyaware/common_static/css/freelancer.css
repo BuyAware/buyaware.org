@@ -202,6 +202,33 @@ section.success a.active {
     color: #2c3e50;
 }
 
+section.trash {
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+            ),
+        url(/media/BSSP-Ewaste-03.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-filter: opacity(80%);
+    /*-webkit-filter: brightness(20%);*/
+}
+
+canvas#animatedChart {
+    padding: 0;
+    margin: auto;
+    display: block;
+    -webkit-filter: brightness(100%);
+}
+
+section.trash .btn {
+    margin: auto;
+    display: block;
+}
+
 @media(max-width:767px) {
     section {
         padding: 75px 0;
@@ -516,3 +543,4 @@ footer .footer-below {
 .bigtext {
     overflow: hidden;
 }
+

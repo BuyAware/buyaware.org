@@ -3,6 +3,10 @@
 {% load i18n %}
 {% load staticfiles  %}
 
+{% block style %}
+
+{% endblock %}
+
 {% block content %}
 <!-- Header -->
 <header>
@@ -16,53 +20,69 @@
                     </div>
                 </div>
           </div>
-	  <div id="custom-search-input">
-            <div class="input-group col-lg-6 col-lg-offset-3">
-              <input type="text" class="  search-query form-control" placeholder="{% trans "Let's get started..." %}" />
-              <span class="input-group-btn">
-                <button class="btn btn-danger" type="button">
-                  <span class=" glyphicon glyphicon-search"></span>
-                </button>
-              </span>
-              </div>
-          </div>
-        </div>
+	  
 </header>
 
+<!-- Go to Assessments !-->
+
+<section class="success trash" >
+  <div class="container">
+   <div class="row">
+     <div class="col-md-12">
+       <canvas id="animatedChart" height="300" width="300"></canvas>
+       <form action="{% url 'db:assessments' %}">
+          <button type="submit" class="btn btn-lg btn-outline btn-info"><h3>{% trans "Go to assessments" %}</h3></button>
+        </form>
+    </div>
+   </div>
+  </div>
+</section>
+
 <!-- About Section -->
-<section id="contact">
+<section class="success">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-	<h2>{% trans "What is BuyAware?" %}</h2>
-	<hr class="check-primary">
+	<h2>{% trans "About BuyAware" %}</h2>
+	<hr class="check-light">
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1">
-	{% blocktrans %}
-	<p>
-	  We are a group of young students from different regions of Switzerland who met at the Swiss Talent Forum in 2015. It was here that we initiated the BuyAware project, and have been developing the idea ever since.
-	</p>
-	<p>
-	  It is our goal to inform consumers about the ecological and ethical background of different products in of the electronics sector, so that the consumers can make a more responsible purchase decision. In order to do so we assess the devices according to six categories: climate and energy, ecology, worker rights, conflict minerals, transparency of the company and performance. The results of these assessments are then merged to form the product profile which our users can access over our database and use for comparison purposes. It is important to us that we present our assessments in an all-in-one format so that our customers can immediately see where a product has its strengths and weaknesses. Additionally, we understand that different people have different needs, which is why the weightings of our six assessed categories can be adjusted individually, so that we are able to give the most helpful feedback possible.
-	</p>
-	<p>
-	  At the moment, we focus our activities only on smartphones. In the long run however, we are planning on expanding our service to cover all products in the electronics sector.
-	</p>
-	{% endblocktrans %}
+      <div class="col-sm-4">
+       {% blocktrans %}
+       <h3>The choice lies with you</h3>
+       <p>
+        BuyAware informs You about the ecological and ethical background of products in the electronics sector, so that You can make a more reflected buying decision.
+      </p>
+      {% endblocktrans %}
+    </div>
+    <div class="col-sm-4">
+      {% blocktrans %}
+      <h3>No one sided matter</h3>
+      <p>
+        Many factors contribute to the fairness and ecology of a product. BuyAware uses six categories: climate and energy, ecology, worker rights, conflict minerals, transparency, to assess products which are then merged to form its product profile.
+      </p>
+      {% endblocktrans %}
+    </div>
+    <div class="col-sm-4">
+      {% blocktrans %}
+      <h3>You know Yourself best</h3>
+      <p>
+        That’s why BuyAware gives you the possibility to set your own priorities. Is ecology more important to you than the products performance? Find the products that match your preference best!
+      </p>
+      {% endblocktrans %}
       </div>
     </div>
     <div class="row">
       <div class="col-sx-12 text-center">
 	<form action="{% url "about:about_index" %}">
-	  <button type="submit" class="btn btn-lg">{% trans "Find out more" %}</button>
+	  <button type="submit" class="btn btn-lg btn-outline btn-info"><h4>{% trans "Find out more" %}</h4></button>
 	</form>
       </div>
     </div>
   </div>  
 </div>
-
+</section>  
   
 <!-- Contact Section -->
 <section id="contact">
@@ -125,5 +145,7 @@
 <!-- Contact Form JavaScript -->
 <script src="{% static "js/jqBootstrapValidation.js" %}"></script>
 <script src="{% static "js/contact_me.js" %}"></script>
+<script src="{% static "js/Chart.js" %}"></script>
+<script src="{% static "home/js/animatedChart.js" %}"></script>
 {% endblock %}
     

@@ -17,14 +17,13 @@ BuyAware - Product Details
 </header>
 
 <section class="success">
-    <div class="container">
-        <div class="row row-eq-height product-container ">
+    <div class="container  product-container">
+        <div class="row row-eq-height">
           {% with object.globalproductrating as rating %}
             <div class="col-md-4 product-detail-chart">
-                <canvas id="Chart" width="300" height="300" CE="{{rating.CE}}" EC="{{rating.EC}}" WR="{{rating.WR}}" CM="{{rating.CM}}" TR="{{rating.TR}}" PR="{{rating.PR}}"></canvas>
+                <canvas id="{{object.name}}" width="300" height="300" CE="{{rating.CE}}" EC="{{rating.EC}}" WR="{{rating.WR}}" CM="{{rating.CM}}" TR="{{rating.TR}}" PR="{{rating.PR}}"></canvas>
             </div>
             <div class="col-md-8 product-details">
-                {# <div class="product-details"> #}
         <div class="product-name">
         <h3>{{object.name}}</h3>
         </div>
@@ -89,80 +88,26 @@ BuyAware - Product Details
                     
     </p>
     {% endwith %}
-                </div>
-            </div>
-        {# <div > #}
-        </div>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Compare with other products
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu product-selector" aria-labelledby="dropdownMenu1">
+      {% for product in products %}
+        {% with product.globalproductrating as rating %}
+        <li><a href="#" CE="{{rating.CE}}" EC="{{rating.EC}}" WR="{{rating.WR}}" CM="{{rating.CM}}" TR="{{rating.TR}}" PR="{{rating.PR}}">{{ product.name }}</a></li>
+        {% endwith %}
+      {% endfor %}
+      </ul>
     </div>
+    </div>
+  </div>
+  </div>
 </section>
 {% endblock %}
 
 {% block scripts %}
 <script src="{% static "js/Chart.js" %}"></script>
-<script type="text/javascript">
-$(function(){
-
-    // color badges
-
-    $(".label").each(function(args){
-        var rating_value = parseInt($(this).html());
-        if( rating_value >= 50){
-          if(rating_value >= 75){
-            $(this).css("backgroundColor", "green");
-          } else {
-            $(this).css("backgroundColor", "yellow");
-          }
-        }else{
-          if(rating_value >=25){
-            $(this).css("backgroundColor", "orange"); 
-          } else {
-            $(this).css("backgroundColor", "red"); 
-          }
-        }
-    });
-
-    // Make chart
-    var canvas = $("canvas");
-    var bg = $("#overall").css("backgroundColor").replace(/^rgba?\(|\s+|\)$/g,'').split(',');
-     var data = {
-            labels: ["CE", "EC", "WR", "CM", "TR", "PR"],
-            datasets: [
-                {
-                    label: "Phone Rating",
-                    backgroundColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 0.3)",
-                    borderColor: "rgba("+bg[0]+","+bg[1]+","+bg[2]+", 1)",
-                    pointBackgroundColor: "rgba(179,181,198,1)",
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgba(179,181,198,1)",
-                    data: [
-                        parseInt(canvas.attr("CE")),
-                        parseInt(canvas.attr("EC")),
-                        parseInt(canvas.attr("WR")),
-                        parseInt(canvas.attr("CM")),
-                        parseInt(canvas.attr("TR")),
-                        parseInt(canvas.attr("PR")),
-                        ]
-                },
-            ]
-        };
-        var Chart1 = new Chart(canvas, {
-            type: 'radar',
-            data: data,
-            options: {
-                scale: {
-                    ticks: {
-                        beginAtZero: true,
-                        max: 100,
-                        stepSize: 20,
-                    }
-                },
-                legend:{
-                  display:false,
-                }
-            }
-        });   
-});
-
-</script>
+<script src="{% static "db/js/assessments_detail.js" %}"></script>
 {% endblock %}
