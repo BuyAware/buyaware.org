@@ -27,17 +27,6 @@ class CriterionInRatingFormSet(forms.models.BaseInlineFormSet):
         if total_percentage != 100 and total_percentage != 0:
             raise ValidationError("Sum of weights must be equal to 100")
 
-
-class CriterionForm(forms.ModelForm):
-
-    def clean(self):
-        super(CriterionForm, self).clean()
-
-        if (self.instance.crit_type == 'YN' and (self.cleaned_data.get("best_grade") or self.cleaned_data.get("worst_grade"))):
-            raise ValidationError("'best grade' and 'worst grade' fields must stay equal to 0 for 'YN' criterion types")
-
-    # TODO: add javascript to show/hide best grade and worst grade fields
-
 class CriterionAnswerFormSet(forms.BaseInlineFormSet):
 
     def __init__(self, *args, **kwargs):

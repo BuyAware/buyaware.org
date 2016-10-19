@@ -19,11 +19,15 @@ mydatabase
 # ignore compiled translation files
 *.mo
 
-# ignore media
-./buyaware/media/*
+# ignore media images
+./buyaware/media/**/*.jpg
+./buyaware/media/**/*.png
 
 #ignore sublime-text workspace file
 *.sublime-workspace
 
 # ignore .DS_Store
 *.DS_Store
+
+# ignore excel files
+*.xlsx

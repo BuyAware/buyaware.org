@@ -13,17 +13,27 @@ BuyAware - Product Details
 
 
 {% block content %}
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/{% trans "en_EN" %}/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <header class="other">
 </header>
 
 <section class="success">
-    <div class="container  product-container">
-        <div class="row row-eq-height">
+    <div class="container  ">
+        <div class="row row-eq-height box ">
           {% with object.globalproductrating as rating %}
             <div class="col-md-4 product-detail-chart">
                 <canvas id="{{object.name}}" width="300" height="300" CE="{{rating.CE}}" EC="{{rating.EC}}" WR="{{rating.WR}}" CM="{{rating.CM}}" TR="{{rating.TR}}" PR="{{rating.PR}}"></canvas>
             </div>
-            <div class="col-md-8 product-details">
+        <div class="col-md-8 product-details">
         <div class="product-name">
         <h3>{{object.name}}</h3>
         </div>
@@ -63,31 +73,120 @@ BuyAware - Product Details
             </ul>
             
           </div>
+
+          {% endwith %}
+
           <div class="tab-pane" id="b">
-                <h3>Climate/Energy</h3>
+              <h3>Climate/Energy</h3>
+              <ul class="list-group pull-left">
+              {% for crit in crits_CE %}
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>{{ crit.criterion.question }}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <h4><span class="label pull-right">{{ crit.answer }}</span></h4>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
           <div class="tab-pane" id="c">
                 <h3>Ecology</h3>
+                <ul class="list-group pull-left">
+              {% for crit in crits_EC %}
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>{{ crit.criterion.question }}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <h4><span class="label pull-right">{{ crit.answer }}</span></h4>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
           <div class="tab-pane" id="d">
                 <h3>Worker Rights</h3>
+                <ul class="list-group pull-left">
+              {% for crit in crits_WR %}
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>{{ crit.criterion.question }}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <h4><span class="label pull-right">{{ crit.answer }}</span></h4>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
           <div class="tab-pane" id="e">
                 <h3>Conflict Minerals</h3>
+                <ul class="list-group pull-left">
+              {% for crit in crits_CM %}
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>{{ crit.criterion.question }}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <h4><span class="label pull-right">{{ crit.answer }}</span></h4>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
           <div class="tab-pane" id="f">
                 <h3>Transparency</h3>
+                <ul class="list-group pull-left">
+              {% for crit in crits_TR %}
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>{{ crit.criterion.question }}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <h4><span class="label pull-right">{{ crit.answer }}</span></h4>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
           <div class="tab-pane" id="g">
                 <h3>Performance</h3>
+                <ul class="list-group pull-left">
+              {% for crit in crits_PR %}
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>{{ crit.criterion.question }}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <h4><span class="label pull-right">{{ crit.answer }}</span></h4>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
         </div><!-- /tab-content -->
       </div><!-- /tabbable -->
     </div>
+
     <p class="product-description">
                     
     </p>
-    {% endwith %}
+
+    <!-- product comparer !-->
     <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Compare with other products
@@ -102,8 +201,16 @@ BuyAware - Product Details
       </ul>
     </div>
     </div>
-  </div>
-  </div>
+  </div>  <!-- row end of product description!-->
+
+  <!-- comments !-->
+  <div class="row comments">
+    <div class="col-md-8 col-md-offset-4 box">
+      <div class="fb-comments" data-href="http://buyaware.org" data-numposts="5" data-width="100%"></div>
+    </div>
+  </div> <!-- row end of comments >
+
+  </div> <!-- container !-->
 </section>
 {% endblock %}
 
