@@ -1,3 +1,5 @@
+animspeed = 0.5;
+
 $(function(){
 
     // color badges
@@ -86,4 +88,5 @@ $(function(){
         //change the label on the dropdown menu to the one of the selected phone
         $(this).parent().parent().parent().children("button").html($(this).html());
     });  
+
 });

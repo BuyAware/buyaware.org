@@ -122,3 +122,7 @@ ul.product-selector {
 .list-group .list-group-item h4, .list-group .list-group-item span {
   line-height: 11px;
 }
+
+.list-group .list-group-item {
+  overflow: hidden;
+}
